@@ -53,7 +53,7 @@ button{
 }
 
 button:hover{
-    color: aquamarine;
+    color: rgb(207, 147, 35);
     background-color: dimgrey;
 }
 
@@ -78,7 +78,7 @@ button:hover{
 .navbar i:hover,
 .navbar-light .navbar-nav .nav-link.active
 .navbar i:hover{
-    color: darkorange;
+    color:#5c2207;
 
 }
 
@@ -124,7 +124,7 @@ button:hover{
 }
 
 #home span{
-    color: coral;
+    color:  #5c2207;
 }
 
 #home .container{
