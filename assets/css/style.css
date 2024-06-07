@@ -308,3 +308,32 @@ footer p{
     color: white;
 
 }
+
+.small-img-group{
+    display: flex;
+    justify-content: space-between;
+}
+
+.small-img-col{
+    flex-basis: 25%;
+    cursor: pointer;
+}
+.single-product input{
+    width: 50px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+.single-product input:focus{
+    outline: none;
+}
+
+.single-product .buy-btn{
+    background-color: #fb774b;
+    opacity: 1;
+    transition: .4s all;
+}
+.single-product .buy-btn:hover{
+    background-color: #222222;
+}
