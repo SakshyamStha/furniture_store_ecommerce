@@ -71,3 +71,14 @@ h6{
     cursor: pointer;
     margin-left: 5px;
 }
+
+#home{
+    background-image: url('../imgs/4.jpg');
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position-x: 0px;
+    background-position-y: 0px;
+    display: flex;
+    
+}
