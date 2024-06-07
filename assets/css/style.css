@@ -201,10 +201,11 @@ button:hover{
 }
 
 hr{
-    width: 100%;
+    width: 5%;
     height: 3px !important;
     opacity: 1 !important;
     background-color: #fb774b;
+    margin: 0 auto;
 }
 
 .star{
@@ -423,4 +424,27 @@ th:last-child{
    
     background-color: #fb774b;
     color: white;
+}
+
+/* Login*/
+#login-form{
+    width: 50%;
+    margin: 5px auto;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #fb774b;
+}
+
+#login-form input{
+    width: 50%;
+    margin: 5px auto;
+}
+
+#login-form #login-btn{
+    background-color: #fb774b;
+    color: whitesmoke;
+}
+
+#login-form #register-url{
+    color: coral;
 }
