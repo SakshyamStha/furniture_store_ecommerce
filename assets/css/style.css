@@ -177,3 +177,18 @@ button:hover{
     align-items: flex-end;
     text-align: end;
 }
+
+/* for the products  */
+.product{
+    cursor: pointer;
+    margin-bottom: 2rem;
+
+}
+
+.product img{
+    transition: 0.3s all
+}
+
+.product:hover img{
+    opacity: .7;
+}
