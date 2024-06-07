@@ -473,3 +473,27 @@ th:last-child{
 #register-form #login-url{
     color: coral;
 }
+
+
+/* Account */
+
+#account-form{
+    width: 50%;
+    margin: 35px auto;
+    text-align: center;
+    padding: 20px;
+}
+
+#account-form input{
+    margin: 5px auto;
+}
+
+#account-form #change-pass-btn{
+    color: white;
+    background-color: #fb774b;
+}
+
+.account-info #order-btn,#logout-btn{
+    text-decoration: none;
+    color: coral;
+}
