@@ -241,3 +241,52 @@ hr{
 #banner button:hover{
     background-color: black;
 }
+
+footer{
+    background-color: #222222;
+}
+
+footer h5{
+    color: #d8d8d8;
+    font-weight: 700;
+    font-size: 1.2rem;
+
+}
+
+footer li {
+    padding-bottom: 4px;
+
+}
+
+footer li a{
+    font-size: .8rem;
+    color: #999;
+    text-decoration: none;
+}
+
+footer li a:hover{
+    color: #d8d8d8;
+}
+
+footer .copyright a{
+    color: black;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    display: inline-block;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%;
+    transition: .4s ease;
+    margin: 0 5px;
+}
+
+footer .copyright a:hover{
+    color: white;
+    background-color: #fb774b;
+}
+
+footer p{
+    color: white;
+    
+}
