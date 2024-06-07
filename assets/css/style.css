@@ -497,3 +497,36 @@ th:last-child{
     text-decoration: none;
     color: coral;
 }
+
+
+/*Order*/
+
+.orders table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.orders .product-info{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.orders th{
+   
+    padding: 5px 10px;
+    color: whitesmoke;
+    background-color: #fb774b;
+    text-align: center;
+}
+
+.orders td{
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.orders td img{
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
