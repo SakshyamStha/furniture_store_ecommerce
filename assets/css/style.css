@@ -63,6 +63,7 @@ button:hover{
     padding-bottom: 2rem !important;
     top: 0;
     left: 0;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
 
 .navbar-light .navbar-nav .nav-link{
@@ -285,8 +286,25 @@ footer .copyright a:hover{
     color: white;
     background-color: #fb774b;
 }
+footer .footer-two a{
+    color: black;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    display: inline-block;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%;
+    transition: .4s ease;
+    margin: 0 5px;
+}
+
+footer .footer-two a:hover{
+    color: white;
+    background-color: #fb774b;
+}
 
 footer p{
     color: white;
-    
+
 }
