@@ -530,3 +530,30 @@ th:last-child{
     height: 80px;
     margin-right: 10px;
 }
+
+
+/*Checkout*/
+
+#checkout-form .checkout-small-element{
+    display: inline-block;
+    width: 48%;
+    margin: 10px auto;
+
+}
+
+#checkout-form .checkout-large-element{
+    width: 96.5%;
+
+}
+
+#checkout-form .checkout-btn-container{
+    margin: 10px;
+    text-align: right;
+    margin-right: 40px;
+
+}
+
+#checkout-form #checkout-btn{
+    color: white;
+    background-color: coral;
+}
