@@ -150,10 +150,30 @@ button:hover{
     height: 100%;
 }
 
+#new .one .details:hover{
+    background-color: darkgoldenrod;
+}
+
 #new .one:nth-child(1) .details{
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: flex-start;
     text-align: start;
+}
+
+#new .one:nth-child(2) .details{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#new .one:nth-child(3) .details{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: end;
 }
