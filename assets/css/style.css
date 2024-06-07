@@ -337,3 +337,34 @@ footer p{
 .single-product .buy-btn:hover{
     background-color: #222222;
 }
+
+
+/*cart*/
+
+.cart table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart.product-info{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cart th{
+    text-align: left;
+    padding: 5px 10px;
+    color: white;
+    background-color: #fb774b;
+}
+
+.cart td{
+    padding: 10px 20px;
+}
+
+.cart td img{
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
