@@ -149,7 +149,7 @@
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
+              
             </div>
             <h5 class="p-name"><?php echo $row['product_name'];     ?></h5>
             <h4 class="p-price"><?php echo $row['product_price'];     ?></h4>
