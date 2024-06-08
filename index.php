@@ -53,7 +53,7 @@
       <section id="home">
         <div class="container">
           <br>
-            <h5>NEW ARRIVALS</h5>
+            <h5>Mihikaaaaa</h5>
             <h1><span>Unleash Your Style</span> Unveil Your Home</h1>
             <p>Best prices<br>this season.</p>
             <button>Shop Now</button>
