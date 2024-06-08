@@ -47,10 +47,10 @@
 
           </div>
         </div>
-      </nav>
+    </nav>
 
       <!--Home-->
-      <section id="home">
+    <section id="home">
         <div class="container">
           <br>
             <h5>NEW ARRIVALS</h5>
@@ -59,10 +59,10 @@
             <button>Shop Now</button>
         </div>
 
-      </section>
+    </section>
     
       <!--Categories-->
-      <section id ="category" class="container">
+    <section id ="category" class="container">
         <div class="container text-center mt-5 py-5">
           <h3>Our Top Categories</h3>
           <hr>
@@ -87,7 +87,7 @@
     
           </div>
 
-      </section>
+    </section>
 <br>
 
       <section id="new" class="w-100">
@@ -153,7 +153,7 @@
             </div>
             <h5 class="p-name"><?php echo $row['product_name'];     ?></h5>
             <h4 class="p-price"><?php echo $row['product_price'];     ?></h4>
-            <button class="buy-btn">Buy Now</button>
+            <a href="<?php echo "product.php?product_id=". $row['product_id']; ?>"><button class="buy-btn">Buy Now</button></a>
           </div>
 
           <?php  }  ?>
