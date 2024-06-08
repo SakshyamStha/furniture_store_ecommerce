@@ -393,6 +393,9 @@ footer p{
     color: #fb774b;
     text-decoration: none;
     font-size: 15px;
+    background-color: white;
+    border: none;
+    
 }
 
 .cart .product-info p{

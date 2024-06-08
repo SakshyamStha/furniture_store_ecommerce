@@ -48,22 +48,30 @@ if(isset($_POST['add_to_cart'])){
 
     }
 
-
-}elseif(isset($_POST['remove_product'])){
+}else if(isset($_POST['remove_product'])){
 
   $product_id = $_POST['product_id'];
   unset($_SESSION['cart'][$product_id]);
 
 
+}else if(isset($_POST['edit_quantity'])){
 
+  $product_id = $_POST['product_id'];
+  $product_quantity = $_POST['product_quantity'];
 
+  $product_array = $_SESSION['cart'][$product_id];
 
+  $product_array['product_quantity'] = $product_quantity;
 
-}else{
-    header('location: index.php');
+  $_SESSION['cart'][$product_id] = $product_array;
+
 }
 
 
+
+else{
+    header('location: index.php');
+}
 
 ?>
 
@@ -141,7 +149,7 @@ if(isset($_POST['add_to_cart'])){
             <tr>
                 <td>
                     <div class="product-info">
-                        <img src="assets/imgs/<?php echo $value['product_image'];  ?>" alt="">
+                        <img src="assets/imgs/<?php echo $value['product_image'];  ?>" >
                         <div>
                             <p><?php echo $value['product_name'];  ?></p>
                             <small><span>Rs.</span><?php echo $value['product_price'];  ?></small>
@@ -156,8 +164,13 @@ if(isset($_POST['add_to_cart'])){
                 </td>
 
                 <td>
-                    <input type="number" value="<?php echo $value['product_quantity'];  ?>"/>
-                    <a class="edit-btn">Edit</a>
+                    
+                    
+                    <form method="POST" action="cart.php">
+                    <input type="hidden" name="product_id" value="<?php echo $value['product_id']; ?>"/>
+                    <input type="number" name="product_quantity" value="<?php echo $value['product_quantity'];  ?>"/>
+                    <input type="submit" class="edit-btn" value="Edit" name="edit_quantity"/>
+                    </form>
 
                 </td>
 
