@@ -23,24 +23,24 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               
               <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="index.php">Home</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="shop.html">Shop</a>
+                <a class="nav-link" href="shop.php">Shop</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="index.html#Categories">Category</a>
+                <a class="nav-link" href="index.php#Categories">Category</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact Us</a>
+                <a class="nav-link" href="contact.php">Contact Us</a>
               </li>
 
               <li class="nav-item">
-                <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-                <a href="account.html"><i class="fa-solid fa-user"></i></a>
+                <a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="account.php"><i class="fa-solid fa-user"></i></a>
               </li>
               
               
@@ -71,7 +71,7 @@
           </p>
         </div>
         <div class="row">
-          <a href="shop.html">
+          <a href="shop.php">
             <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/imgs/carpet1.jpg" alt="Carpet">
           </a>
           <a href="">
