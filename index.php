@@ -131,66 +131,32 @@
           </p>
         </div>
 
-        <div class="row mx-auto container">
+        <div class="row mx-auto container-fluid">
+
+        <?php include('server/get_featured_products.php');  ?>
+
+        <?php
+          while($row=$featured_products->fetch_assoc()){
+
+          
+        ?>
+
+
           <div class="product text-center col-lg-3 col-md-4 col-sm-6">
-            <img class="img-fluid mb-3"  src="assets/imgs/sofa2.jpg" alt="Sofa">
+            <img class="img-fluid mb-3" src="assets/imgs/<?php echo $row['product_image'];?>" alt="carpet1">
             <div class="star">
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
-
             </div>
-            <h5 class="p-name">Sofa</h5>
-            <h4 class="p-price">Rs.35000</h4>
+            <h5 class="p-name"><?php echo $row['product_name'];     ?></h5>
+            <h4 class="p-price"><?php echo $row['product_price'];     ?></h4>
             <button class="buy-btn">Buy Now</button>
           </div>
 
-          <div class="product text-center col-lg-3 col-md-4 col-sm-6">
-            <img class="img-fluid mb-3"  src="assets/imgs/carpet2.jpg" alt="Sofa">
-            <div class="star">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-
-            </div>
-            <h5 class="p-name">Carpet</h5>
-            <h4 class="p-price">Rs.5000</h4>
-            <button class="buy-btn">Buy Now</button>
-          </div>
-
-          <div class="product text-center col-lg-3 col-md-4 col-sm-6">
-            <img class="img-fluid mb-3"  src="assets/imgs/table4.jpg" alt="Sofa">
-            <div class="star">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-
-            </div>
-            <h5 class="p-name">Table</h5>
-            <h4 class="p-price">Rs.3000</h4>
-            <button class="buy-btn">Buy Now</button>
-          </div>
-
-          <div class="product text-center col-lg-3 col-md-4 col-sm-6">
-            <img class="img-fluid mb-3"  src="assets/imgs/wall3.jpg" alt="Sofa">
-            <div class="star">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-
-            </div>
-            <h5 class="p-name">Wall Mirror</h5>
-            <h4 class="p-price">Rs.3000</h4>
-            <button class="buy-btn">Buy Now</button>
-          </div>
+          <?php  }  ?>
         </div>
         </section>
 
