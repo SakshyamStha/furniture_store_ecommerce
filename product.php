@@ -1,3 +1,37 @@
+<?php
+
+include('server/connection.php');
+
+if(isset($_GET['product_id'])){
+
+  $product_id = $_GET['product_id'];
+
+     $stmt = $conn->prepare("SELECT * FROM products WHERE product_id = ?");
+     $stmt->bind_param("i",$product_id);
+
+     $stmt->execute();
+
+
+     $product = $stmt->get_result();
+
+
+
+
+
+}else{
+  header('location: index.php');
+}
+
+
+
+
+
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,72 +47,93 @@
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
-    <div class="container">
-      <img src="assets/imgs/logo1.jpg" height="50" width="100" alt="Logo">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse nav-btns" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+          <img src="assets/imgs/logo1.jpg" height="50" width="100" alt="Logo">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse nav-btns" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              
+              <li class="nav-item">
+                <a class="nav-link" href="index.php">Home</a>
+              </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="shop.html">Shop</a>
-          </li>
+              <li class="nav-item">
+                <a class="nav-link" href="shop.php">Shop</a>
+              </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="index.html#Categories">Category</a>
-          </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.php#Categories">Category</a>
+              </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact Us</a>
-          </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.php">Contact Us</a>
+              </li>
 
-          <li class="nav-item">
-            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a href="account.html"><i class="fa-solid fa-user"></i></a>
-          </li>
-          
-          
+              <li class="nav-item">
+                <a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="account.php"><i class="fa-solid fa-user"></i></a>
+              </li>
+              
+              
 
-      </div>
-    </div>
-  </nav>
+          </div>
+        </div>
+</nav>
 
       <section class="single-product my-5 pt-5">
         <div class="row mt-5">
+
+          <?php
+            while($row = $product->fetch_assoc()){
+          ?>
+
+          
+
             <div class="col-lg-5 col-md-6 col-sm-12">
-                <img class="img-fluid w-100 pb-1" src="assets/imgs/carpet1.jpg" id="mainImg">
+                <img class="img-fluid w-100 pb-1" src="assets/imgs/<?php echo $row['product_image']; ?>" id="mainImg">
                 <div class="small-img-group">
                     <div class="small-img-col">
-                        <img src="assets/imgs/carpet2.jpg" width="100%" class="small-img" alt="">
+                        <img src="assets/imgs/<?php echo $row['product_image']; ?>" width="100%" class="small-img" alt="">
                     </div>
                     <div class="small-img-col">
-                        <img src="assets/imgs/carpet3.jpg" width="100%" class="small-img" alt="">
+                        <img src="assets/imgs/<?php echo $row['product_image2']; ?>" width="100%" class="small-img" alt="">
                     </div>
                     <div class="small-img-col">
-                        <img src="assets/imgs/carpet4.jpg" width="100%" class="small-img" alt="">
+                        <img src="assets/imgs/<?php echo $row['product_image3']; ?>" width="100%" class="small-img" alt="">
                     </div>
                     <div class="small-img-col">
-                        <img src="assets/imgs/5.jpg" width="100%" class="small-img" alt="">
+                        <img src="assets/imgs/<?php echo $row['product_image4']; ?>" width="100%" class="small-img" alt="">
                     </div>
                 </div>
             </div>
 
+            
+
             <div class="col-lg-6 col-md-12 col-sm-12">
                 <h6>Carpet</h6>
-                <h3 class="py-4">Carpet</h3>
-                <h2>Rs.3800</h2>
-                <input type="number" value="1"/>
-                <button class="buy-btn">Add To Cart</button>
-                <h4 class="mt-5 mb-5">Product Details</h4>
-                <span>The details of product will be displayed shortly.</span>
-            </div>
+                <h3 class="py-4"><?php echo $row['product_name']; ?></h3>
+                <h2>Rs.<?php echo $row['product_price'];  ?></h2>
 
+                <form method="POST" action="cart.php">
+                  <input type="hidden" name="product_id" value="<?php echo $row['product_id']; ?>" >
+                  <input type="hidden" name="product_image" value="<?php echo $row['product_image']; ?>">
+                  <input type="hidden" name="product_name" value="<?php echo $row['product_name']; ?>">
+                  <input type="hidden" name="product_price" value="<?php echo $row['product_price']; ?>">
+
+                      <input type="number" name="product_quantity" value="1"/>
+                      <button class="buy-btn" type="submit" name="add_to_cart">Add To Cart</button>
+
+
+                </form>
+                
+                <h4 class="mt-5 mb-5">Product Details</h4>
+                <span><?php echo $row['product_description']; ?></span>
+            </div>
+           
+            <?php  }  ?>
         </div>
       </section>
 

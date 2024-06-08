@@ -66,7 +66,7 @@
 
           </div>
         </div>
-      </nav>
+    </nav>
 
 
       <section id="featured" class="my-5 py-5">

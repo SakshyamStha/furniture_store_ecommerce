@@ -1,3 +1,106 @@
+<?php
+
+session_start();
+
+if(isset($_POST['add_to_cart'])){
+  
+    if(isset($_SESSION['cart'])){
+
+      $products_array_ids = array_column($_SESSION['cart'],"product_id");
+      if(!in_array($_POST['product_id'],$products_array_ids) ){
+        $product_id = $_POST['product_id'];  
+
+        $product_array = array(
+                            'product_id' => $_POST['product_id'],
+                            'product_name' => $_POST['product_name'],
+                            'product_price' => $_POST['product_price'],
+                            'product_image' => $_POST['product_image'],
+                            'product_quantity' => $_POST['product_quantity']
+        );
+
+        $_SESSION['cart'][$product_id] = $product_array;
+
+
+      }else{
+
+        echo '<script>alert("Product has been added to the cart!");</script>';
+        //echo '<script>window.location="index.php";</script>';
+      }
+
+
+    }else{
+
+       $product_id = $_POST['product_id'];
+       $product_name = $_POST['product_name'];
+       $product_price = $_POST['product_price'];
+       $product_image = $_POST['product_image'];
+       $product_quantity = $_POST['product_quantity'];
+
+       $product_array = array(
+                          'product_id' => $product_id,
+                          'product_name' => $product_name,
+                          'product_price' => $product_price,
+                          'product_image' => $product_image,
+                          'product_quantity' => $product_quantity
+       );
+
+       $_SESSION['cart'][$product_id] = $product_array;
+
+    }
+
+calculateTotalCart();
+
+
+}else if(isset($_POST['remove_product'])){
+
+  $product_id = $_POST['product_id'];
+  unset($_SESSION['cart'][$product_id]);
+
+
+  calculateTotalCart();
+
+
+}else if(isset($_POST['edit_quantity'])){
+
+  $product_id = $_POST['product_id'];
+  $product_quantity = $_POST['product_quantity'];
+
+  $product_array = $_SESSION['cart'][$product_id];
+
+  $product_array['product_quantity'] = $product_quantity;
+
+  $_SESSION['cart'][$product_id] = $product_array;
+
+
+
+  calculateTotalCart();
+
+
+}
+else{
+    header('location: index.php');
+}
+
+
+function calculateTotalCart(){
+  $total = 0;
+  foreach($_SESSION['cart'] as $key => $value){
+    $product = $_SESSION['cart'][$key];
+    $price = $product['product_price'];
+    $quantity = $product['product_quantity'];
+
+    $total = $total + ($price * $quantity);
+  }
+
+  $_SESSION['total'] = $total;
+}
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +116,7 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
         <div class="container">
           <img src="assets/imgs/logo1.jpg" height="50" width="100" alt="Logo">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,31 +126,31 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               
               <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="index.php">Home</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="shop.html">Shop</a>
+                <a class="nav-link" href="shop.php">Shop</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="index.php#Categories">Category</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#">Contact Us</a>
+                <a class="nav-link" href="contact.php">Contact Us</a>
               </li>
 
               <li class="nav-item">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <i class="fa-solid fa-user"></i>
+                <a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="account.php"><i class="fa-solid fa-user"></i></a>
               </li>
               
               
 
           </div>
         </div>
-      </nav>
+</nav>
 
       <!--Cart-->
       <section class="cart container my-5 py-5">
@@ -62,98 +165,70 @@
                 <th>Quantity</th>
                 <th>Subtotal</th>
             </tr>
+
+
+            <?php foreach($_SESSION['cart'] as $key => $value){   ?>
+
+
             <tr>
                 <td>
                     <div class="product-info">
-                        <img src="assets/imgs/sofa2.jpg" alt="">
+                        <img src="assets/imgs/<?php echo $value['product_image'];  ?>" >
                         <div>
-                            <p>Sofa</p>
-                            <small><span>Rs.</span>35000</small>
+                            <p><?php echo $value['product_name'];  ?></p>
+                            <small><span>Rs.</span><?php echo $value['product_price'];  ?></small>
                             <br>
-                            <a class="remove-btn" href="#">Remove</a>
+
+
+                            <form method="POST" action="cart.php">
+                                <input type="hidden" name="product_id" value="<?php echo $value['product_id']; ?>">
+                                <input type="submit" name="remove_product" class="remove-btn" value="Remove" >
+                            </form>
                         </div>
                     </div>
                 </td>
 
                 <td>
-                    <input type="number" value="1"/>
-                    <a class="edit-btn">Edit</a>
+                    
+                    
+                    <form method="POST" action="cart.php">
+                    <input type="hidden" name="product_id" value="<?php echo $value['product_id']; ?>">
+                    <input type="number" name="product_quantity" value="<?php echo $value['product_quantity'];  ?>"/>
+                    <input type="submit" class="edit-btn" value="Edit" name="edit_quantity"/>
+                    </form>
 
                 </td>
 
                 <td>
                     <span>Rs.</span>
-                    <span class="product-price">35000</span>
+                    <span class="product-price"><?php echo $value['product_price']*$value['product_quantity'];  ?></span>
                 </td>
             </tr>
 
-            <tr>
-                <td>
-                    <div class="product-info">
-                        <img src="assets/imgs/sofa2.jpg" alt="">
-                        <div>
-                            <p>Sofa</p>
-                            <small><span>Rs.</span>35000</small>
-                            <br>
-                            <a class="remove-btn" href="#">Remove</a>
-                        </div>
-                    </div>
-                </td>
-
-                <td>
-                    <input type="number" value="1"/>
-                    <a class="edit-btn">Edit</a>
-
-                </td>
-
-                <td>
-                    <span>Rs.</span>
-                    <span class="product-price">35000</span>
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <div class="product-info">
-                        <img src="assets/imgs/sofa2.jpg" alt="">
-                        <div>
-                            <p>Sofa</p>
-                            <small><span>Rs.</span>35000</small>
-                            <br>
-                            <a class="remove-btn" href="#">Remove</a>
-                        </div>
-                    </div>
-                </td>
-
-                <td>
-                    <input type="number" value="1"/>
-                    <a class="edit-btn">Edit</a>
-
-                </td>
-
-                <td>
-                    <span>Rs.</span>
-                    <span class="product-price">35000</span>
-                </td>
-            </tr>
+            <?php } ?>
 
         </table>
 
         <div class="cart-total">
             <table>
-                <tr>
+                <!-- <tr>
                     <td>Subtotal</td>
                     <td>Rs.35000</td>
-                </tr>
+                </tr> -->
                 <tr>
                     <td>Total</td>
-                    <td>Rs.35000</td>
+                    <td>Rs.<?php echo $_SESSION['total']; ?></td>
                 </tr>
             </table>
         </div>
 
         <div class="checkout-container">
-            <button class="btn checkout-btn">Checkout</button>
+            <form method="POST" action="checkout.php">
+              <input class="btn checkout-btn" value="Checkout" name="checkout">
+
+            </form>
+
+            
         </div>
 
 
