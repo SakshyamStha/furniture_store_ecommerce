@@ -8,6 +8,7 @@ if(isset($_POST['add_to_cart'])){
 
       $products_array_ids = array_column($_SESSION['cart'],"product_id");
       if(!in_array($_POST['product_id'],$products_array_ids) ){
+        $product_id = $_POST['product_id'];  
 
         $product_array = array(
                             'product_id' => $_POST['product_id'],
@@ -46,6 +47,16 @@ if(isset($_POST['add_to_cart'])){
        $_SESSION['cart'][$product_id] = $product_array;
 
     }
+
+
+}elseif(isset($_POST['remove_product'])){
+
+  $product_id = $_POST['product_id'];
+  unset($_SESSION['cart'][$product_id]);
+
+
+
+
 
 
 }else{
@@ -135,7 +146,11 @@ if(isset($_POST['add_to_cart'])){
                             <p><?php echo $value['product_name'];  ?></p>
                             <small><span>Rs.</span><?php echo $value['product_price'];  ?></small>
                             <br>
-                            <a class="remove-btn" href="#">Remove</a>
+
+                            <form method="POST" action="cart.php">
+                                <input type="hidden" name="product_id" value="<?php echo $value['product_id']; ?>">
+                                <input type="submit" name="remove_product" class="remove-btn" value="Remove" >
+                            </form>
                         </div>
                     </div>
                 </td>
