@@ -1,3 +1,63 @@
+<?php
+
+session_start();
+
+if(isset($_POST['add_to_cart'])){
+  
+    if(isset($_SESSION['cart'])){
+
+      $products_array_ids = array_column($_SESSION['cart'],"product_id");
+      if(!in_array($_POST['product_id'],$products_array_ids) ){
+
+        $product_array = array(
+                            'product_id' => $_POST['product_id'],
+                            'product_name' => $_POST['product_name'],
+                            'product_price' => $_POST['product_price'],
+                            'product_image' => $_POST['product_image'],
+                            'product_quantity' => $_POST['product_quantity']
+        );
+
+        $_SESSION['cart'][$product_id] = $product_array;
+
+
+      }else{
+
+        echo '<script>alert("Product has been added to the cart!");</script>';
+        //echo '<script>window.location="index.php";</script>';
+      }
+
+
+    }else{
+
+       $product_id = $_POST['product_id'];
+       $product_name = $_POST['product_name'];
+       $product_price = $_POST['product_price'];
+       $product_image = $_POST['product_image'];
+       $product_quantity = $_POST['product_quantity'];
+
+       $product_array = array(
+                          'product_id' => $product_id,
+                          'product_name' => $product_name,
+                          'product_price' => $product_price,
+                          'product_image' => $product_image,
+                          'product_quantity' => $product_quantity
+       );
+
+       $_SESSION['cart'][$product_id] = $product_array;
+
+    }
+
+
+}else{
+    header('location: index.php');
+}
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,13 +122,18 @@
                 <th>Quantity</th>
                 <th>Subtotal</th>
             </tr>
+
+
+            <?php foreach($_SESSION['cart'] as $key => $value){   ?>
+
+
             <tr>
                 <td>
                     <div class="product-info">
-                        <img src="assets/imgs/sofa2.jpg" alt="">
+                        <img src="assets/imgs/<?php echo $value['product_image'];  ?>" alt="">
                         <div>
-                            <p>Sofa</p>
-                            <small><span>Rs.</span>35000</small>
+                            <p><?php echo $value['product_name'];  ?></p>
+                            <small><span>Rs.</span><?php echo $value['product_price'];  ?></small>
                             <br>
                             <a class="remove-btn" href="#">Remove</a>
                         </div>
@@ -76,66 +141,18 @@
                 </td>
 
                 <td>
-                    <input type="number" value="1"/>
+                    <input type="number" value="<?php echo $value['product_quantity'];  ?>"/>
                     <a class="edit-btn">Edit</a>
 
                 </td>
 
                 <td>
                     <span>Rs.</span>
-                    <span class="product-price">35000</span>
+                    <span class="product-price"><?php echo $value['product_price'];  ?></span>
                 </td>
             </tr>
 
-            <tr>
-                <td>
-                    <div class="product-info">
-                        <img src="assets/imgs/sofa2.jpg" alt="">
-                        <div>
-                            <p>Sofa</p>
-                            <small><span>Rs.</span>35000</small>
-                            <br>
-                            <a class="remove-btn" href="#">Remove</a>
-                        </div>
-                    </div>
-                </td>
-
-                <td>
-                    <input type="number" value="1"/>
-                    <a class="edit-btn">Edit</a>
-
-                </td>
-
-                <td>
-                    <span>Rs.</span>
-                    <span class="product-price">35000</span>
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <div class="product-info">
-                        <img src="assets/imgs/sofa2.jpg" alt="">
-                        <div>
-                            <p>Sofa</p>
-                            <small><span>Rs.</span>35000</small>
-                            <br>
-                            <a class="remove-btn" href="#">Remove</a>
-                        </div>
-                    </div>
-                </td>
-
-                <td>
-                    <input type="number" value="1"/>
-                    <a class="edit-btn">Edit</a>
-
-                </td>
-
-                <td>
-                    <span>Rs.</span>
-                    <span class="product-price">35000</span>
-                </td>
-            </tr>
+            <?php } ?>
 
         </table>
 
