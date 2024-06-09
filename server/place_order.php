@@ -5,7 +5,7 @@ include('connection.php');
 
 if(isset($_POST['place_order'])){
 
-//get user info and store in database
+                                                            //get user info and store in database
 $name = $_POST['name'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
@@ -23,11 +23,13 @@ $stmt->bind_param('isiisss',$order_cost,$order_status,$user_id,$phone,$city,$add
 
 $stmt->execute();
 
+                                                //store order info in database
+
 $order_id = $stmt->insert_id;
 
 
 
-//get products from cart
+                                                        //get products from cart
 
 $_SESSION['cart'];
 foreach($_SESSION['cart'] as $key=>$value){
@@ -39,33 +41,24 @@ foreach($_SESSION['cart'] as $key=>$value){
     $product_price = $product['product_price'];
     $product_quantity = $product['product_quantity'];
 
+
+
+
+
+                                             //store each single item in order_items database
+
     $stmt1 = $conn->prepare("INSERT INTO order_items (order_id,product_id,product_name,product_image,product_price,product_quantity,user_id,order_date)
                         VALUES (?,?,?,?,?,?,?,?)");
 
     $stmt1->bind_param('iissiiis',$order_id,$product_id,$product_name,$product_image,$product_price,$product_quantity,$user_id,$order_date);
 
     $stmt1->execute();
-
-
 }
-//store order info in database
 
 
 
-
-
-
-
-//store each single item in order_items database
-
-
-
-
-
-
-
-
-//remove everything from cart
+                                        //remove everything from cart  ----> until payment is done
+    //unset($_SESSION['cart']);
 
 
 
@@ -75,7 +68,10 @@ foreach($_SESSION['cart'] as $key=>$value){
 
 
 
-//inform user whether everything is fine or there is a problem
+                                         //inform user whether everything is fine or there is a problem
+
+
+header('location: ../payment.php?order_status="order placed successfully"');
 
 
 }
