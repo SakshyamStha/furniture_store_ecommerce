@@ -100,7 +100,7 @@ $products = $stmt->get_result();
           <hr>
         </div>
 
-              <form action="">
+              <form action="shop.php" method="POST">
                 <div class = "row mx-auto container">
                   <div class="col-lg-12 col-md-12 col-sm-12">
                     <p>Category</p>
