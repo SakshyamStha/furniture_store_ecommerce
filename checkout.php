@@ -88,7 +88,7 @@ else{
                 </div>
                 <div class="form-group checkout-small-element">
                     <label for="">Phone</label>
-                    <input type="tel" class="form-control" id="checkout-phone" name="phone" placeholder="password">
+                    <input type="tel" class="form-control" id="checkout-phone" name="phone" placeholder="phone number">
                 </div>
                 <div class="form-group checkout-small-element">
                     <label for="">City</label>
