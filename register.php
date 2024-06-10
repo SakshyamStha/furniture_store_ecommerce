@@ -3,6 +3,12 @@
     session_start();
 
     include('server/connection.php');
+
+    if(isset($_SESSION['logged_in'])){
+      header('location: account.php');
+      exit;
+    }
+
    
     if(isset($_POST['register'])){
       
@@ -55,14 +61,7 @@
           }
       }
  
- 
-      
- 
- 
     }
-    }else if(isset($_SESSION['logged_in'])){
-      header('location: account.php');
-      exit;
     }
 
 ?>
