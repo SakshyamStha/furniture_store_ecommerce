@@ -537,6 +537,11 @@ th:last-child{
     margin-right: 10px;
 }
 
+.orders .order-details-btn{
+    color: white;
+    background-color: #fb774b;
+}
+
 
 /*Checkout*/
 
