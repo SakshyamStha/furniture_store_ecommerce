@@ -8,7 +8,7 @@ if(!empty($_SESSION['cart'])){
 
 }
 else{
-  header('location:index.php');
+  header('location:payment.php');
 }
 
 
