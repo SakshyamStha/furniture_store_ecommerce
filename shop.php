@@ -1,3 +1,52 @@
+<?php
+
+include('server/connection.php');
+
+
+if(isset($_POST['search'])){
+  //returns the searched product
+
+          $category = $_POST['category'];
+          $price = $_POST['price'];
+
+
+          $stmt = $conn->prepare("SELECT * FROM products WHERE product_category=? AND product_price<=?");
+
+          $stmt->bind_param("si",$category,$price);
+
+          $stmt->execute();
+
+
+          $products = $stmt->get_result();
+
+
+
+
+}else{
+      //returns all products
+        $stmt = $conn->prepare("SELECT * FROM products");
+
+        $stmt->execute();
+
+
+        $products = $stmt->get_result();
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,10 +118,92 @@
     </nav>
 
 
-      <section id="featured" class="my-5 py-5">
-        <div class="container text-center mt-5 py-5">
-          <h3>Our Products</h3>
+      <section id="search" class="my-5 py-5 ms-2 row mx-auto">
+        <div class="container mt-5 py-5">
+          <p>Search Products</p>
           <hr>
+        </div>
+
+              <form action="shop.php" method="POST">
+                <div class = "row mx-auto container">
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <p>Category</p>
+                      <div class="form-check">
+                        <input class="form-check-input" value="sofa" type="radio" name="category" id="category_one">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          Sofa
+                        </label>
+                      </div>
+
+                      <div class="form-check">
+                        <input class="form-check-input" value="carpet" type="radio" name="category" id="category_one">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          Carpet
+                        </label>
+                      </div>
+
+                      <div class="form-check">
+                        <input class="form-check-input" value="table" type="radio" name="category" id="category_one">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          Table
+                        </label>
+                      </div>
+
+                      <div class="form-check">
+                        <input class="form-check-input" value="chair" type="radio" name="category" id="category_one">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          Chair
+                        </label>
+                      </div>
+
+                      <div class="form-check">
+                        <input class="form-check-input" value="lamp" type="radio" name="category" id="category_one">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          Lamp
+                        </label>
+                      </div>
+
+                      <div class="form-check">
+                        <input class="form-check-input" value="wall" type="radio" name="category" id="category_one">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          Wall
+                        </label>
+                      </div>
+
+                  </div>
+
+                </div>
+
+                <div class="row mx-auto container mt-5">
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <p>Price</p>
+                    <input type="range" class="form-range w-50" min="1" max="100000" name="price" value="100" id="customRange2">
+                    <div class="w-50">
+                      <span style="float:left;">1</span>
+                      <span style="float:right;">50000</span>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="form-group my-3 mx-3">
+                  <input type="submit" name="search" value="Search" class="btn btn-primary" id="">
+                </div>
+              </form>
+
+
+
+      </section>
+
+
+
+      <!--shop-->
+      <section id="shop" class="my-5 py-5 row mx-auto">
+        <div class="container mt-5 py-5">
+          <h3>Our Products</h3>
+          
           <p>
             Here you can check out our products
           </p>
@@ -80,123 +211,27 @@
 
         <div class="row mx-auto container">
 
+
+          <?php while($row = $products->fetch_assoc()) {  ?>
+
+
+
+
           <div onclick="window.location.href='product.html'"; class="product text-center col-lg-3 col-md-4 col-sm-6">
-            <img class="img-fluid mb-3"  src="assets/imgs/sofa2.jpg" alt="Sofa">
+            <img class="img-fluid mb-3"  src="assets/imgs/<?php echo $row['product_image']; ?>" alt="Sofa">
             <div class="star">
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
-
             </div>
-            <h5 class="p-name">Sofa</h5>
-            <h4 class="p-price">Rs.35000</h4>
-            <button class="buy-btn">Buy Now</button>
+            <h5 class="p-name"><?php echo $row['product_name']; ?></h5>
+            <h4 class="p-price">Rs.<?php echo $row['product_price']; ?></h4>
+            <a class="btn shop-buy-btn" href="<?php echo "product.php?product_id=". $row['product_id']; ?>">Buy Now</a>
           </div>
 
-          <div class="product text-center col-lg-3 col-md-4 col-sm-6">
-            <img class="img-fluid mb-3"  src="assets/imgs/carpet2.jpg" alt="Sofa">
-            <div class="star">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-
-            </div>
-            <h5 class="p-name">Carpet</h5>
-            <h4 class="p-price">Rs.5000</h4>
-            <button class="buy-btn">Buy Now</button>
-          </div>
-
-          <div class="product text-center col-lg-3 col-md-4 col-sm-6">
-            <img class="img-fluid mb-3"  src="assets/imgs/table4.jpg" alt="Sofa">
-            <div class="star">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-
-            </div>
-            <h5 class="p-name">Table</h5>
-            <h4 class="p-price">Rs.3000</h4>
-            <button class="buy-btn">Buy Now</button>
-          </div>
-
-          <div class="product text-center col-lg-3 col-md-4 col-sm-6">
-            <img class="img-fluid mb-3"  src="assets/imgs/wall3.jpg" alt="Sofa">
-            <div class="star">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-
-            </div>
-            <h5 class="p-name">Wall Mirror</h5>
-            <h4 class="p-price">Rs.3000</h4>
-            <button class="buy-btn">Buy Now</button>
-          </div>
-
-          <div class="product text-center col-lg-3 col-md-4 col-sm-6">
-            <img class="img-fluid mb-3"  src="assets/imgs/sofa2.jpg" alt="Sofa">
-            <div class="star">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-
-            </div>
-            <h5 class="p-name">Sofa</h5>
-            <h4 class="p-price">Rs.35000</h4>
-            <button class="buy-btn">Buy Now</button>
-          </div>
-          <div class="product text-center col-lg-3 col-md-4 col-sm-6">
-            <img class="img-fluid mb-3"  src="assets/imgs/sofa2.jpg" alt="Sofa">
-            <div class="star">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-
-            </div>
-            <h5 class="p-name">Sofa</h5>
-            <h4 class="p-price">Rs.35000</h4>
-            <button class="buy-btn">Buy Now</button>
-          </div>
-          <div class="product text-center col-lg-3 col-md-4 col-sm-6">
-            <img class="img-fluid mb-3"  src="assets/imgs/sofa2.jpg" alt="Sofa">
-            <div class="star">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-
-            </div>
-            <h5 class="p-name">Sofa</h5>
-            <h4 class="p-price">Rs.35000</h4>
-            <button class="buy-btn">Buy Now</button>
-          </div>
-          <div class="product text-center col-lg-3 col-md-4 col-sm-6">
-            <img class="img-fluid mb-3"  src="assets/imgs/sofa2.jpg" alt="Sofa">
-            <div class="star">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-
-            </div>
-            <h5 class="p-name">Sofa</h5>
-            <h4 class="p-price">Rs.35000</h4>
-            <button class="buy-btn">Buy Now</button>
-          </div>
-
+            <?php } ?>
 
           <nav aria-label="Page Navigation">
             <ul class="pagination mt-5 ">
@@ -218,84 +253,6 @@
 
 
 
-
-      <!--footer-->
-      <footer class="mt-5 py-5">
-        <div class="row container mx-auto pt-5">
-          <div class="footer-one col-lg-3 col-md-6 col-sm-12">
-            <img src="assets/imgs/logo1.jpg" height="60px" width="100px" alt="">
-            <p class="pt-3">
-              We provide the best products for affordable prices
-            </p>
-          </div>
-
-          <div class="footer-one col-lg-3 col-md-6 col-sm-12">
-           <h5 class="pb-2">
-            Featured
-           </h5>
-           <ul class="text-uppercase">
-              <li><a href="">Sofa</a></li>
-              <li><a href="">Table</a></li>
-              <li><a href="">Carpet</a></li>
-              <li><a href="">Wall</a></li>
-              <li><a href="">Lamp</a></li>
-              <li><a href="">Chair</a></li>
-           </ul>
-          </div>
-
-          <div class="footer-one col-lg-3 col-md-6 col-sm-12">
-            <h5 class="pb-2">
-              Contact Us
-            </h5>
-            <div>
-              <h6 class="text-uppercase">Address</h6>
-              <p>Samakhushi,Kathmandu</p>
-            </div>
-            <div>
-              <h6 class="text-uppercase">Phone</h6>
-              <p>+977 9841491234</p>
-            </div>
-            <div>
-              <h6 class="text-uppercase">Email</h6>
-              <p>halo1@email.com</p>
-            </div>
-          </div>
-          
-          <div class="footer-two col-lg-3 col-md-6 col-sm-12">
-            <div class="row container mx-auto">
-              <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-              <a href="#"><i class="fab fa-facebook"></i></a><br>
-              <a href="#"><i class="fab fa-instagram"></i></a><br>
-              <a href="#"><i class="fab fa-twitter"></i></a><br>
-              </div>
-            </div>
-          </div>  
-
-        </div>
-
-        <div class="copyright mt-5">
-          <div class="row container mx-auto">
-            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-              <img src="assets/imgs/payment.png" height="77%" width="88%"  alt="">
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 mb-4 text-nowrap mb-2">
-              <p>Halo @ 2024 All Rights Reserved</p>
-            </div>
-            
-
-          </div>
-
-        </div>
-
-      </footer>
-
-
-
-
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
-</html>
+      <?php
+  include('layouts/footer.php');
+?>
