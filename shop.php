@@ -3,12 +3,36 @@
 include('server/connection.php');
 
 
-$stmt = $conn->prepare("SELECT * FROM products");
+if(isset($_POST['search'])){
+  //returns the searched product
 
-$stmt->execute();
+          $category = $_POST['category'];
+          $price = $_POST['price'];
 
 
-$products = $stmt->get_result();
+          $stmt = $conn->prepare("SELECT * FROM products WHERE product_category=? AND product_price<=?");
+
+          $stmt->bind_param("si",$category,$price);
+
+          $stmt->execute();
+
+
+          $products = $stmt->get_result();
+
+
+
+
+}else{
+      //returns all products
+        $stmt = $conn->prepare("SELECT * FROM products");
+
+        $stmt->execute();
+
+
+        $products = $stmt->get_result();
+
+}
+
 
 
 
@@ -105,42 +129,42 @@ $products = $stmt->get_result();
                   <div class="col-lg-12 col-md-12 col-sm-12">
                     <p>Category</p>
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="category" id="category_one">
+                        <input class="form-check-input" value="sofa" type="radio" name="category" id="category_one">
                         <label class="form-check-label" for="flexRadioDefault1">
                           Sofa
                         </label>
                       </div>
 
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="category" id="category_one">
+                        <input class="form-check-input" value="carpet" type="radio" name="category" id="category_one">
                         <label class="form-check-label" for="flexRadioDefault1">
                           Carpet
                         </label>
                       </div>
 
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="category" id="category_one">
+                        <input class="form-check-input" value="table" type="radio" name="category" id="category_one">
                         <label class="form-check-label" for="flexRadioDefault1">
                           Table
                         </label>
                       </div>
 
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="category" id="category_one">
+                        <input class="form-check-input" value="chair" type="radio" name="category" id="category_one">
                         <label class="form-check-label" for="flexRadioDefault1">
                           Chair
                         </label>
                       </div>
 
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="category" id="category_one">
+                        <input class="form-check-input" value="lamp" type="radio" name="category" id="category_one">
                         <label class="form-check-label" for="flexRadioDefault1">
                           Lamp
                         </label>
                       </div>
 
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="category" id="category_one">
+                        <input class="form-check-input" value="wall" type="radio" name="category" id="category_one">
                         <label class="form-check-label" for="flexRadioDefault1">
                           Wall
                         </label>
@@ -153,7 +177,7 @@ $products = $stmt->get_result();
                 <div class="row mx-auto container mt-5">
                   <div class="col-lg-12 col-md-12 col-sm-12">
                     <p>Price</p>
-                    <input type="range" class="form-range w-50" min="1" max="100000" name="" id="customRange2">
+                    <input type="range" class="form-range w-50" min="1" max="100000" name="price" value="100" id="customRange2">
                     <div class="w-50">
                       <span style="float:left;">1</span>
                       <span style="float:right;">50000</span>
