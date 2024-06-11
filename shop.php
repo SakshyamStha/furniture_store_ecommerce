@@ -118,8 +118,8 @@ if(isset($_POST['search'])){
     </nav>
 
 
-      <section id="search" class="my-5 py-5 ms-2 row mx-auto">
-        <div class="container mt-5 py-5">
+      <section id="search" class="my-5 py-5 ms-2 ">
+        <div class="container mt-5 py-2">
           <p>Search Products</p>
           <hr>
         </div>
@@ -129,42 +129,42 @@ if(isset($_POST['search'])){
                   <div class="col-lg-12 col-md-12 col-sm-12">
                     <p>Category</p>
                       <div class="form-check">
-                        <input class="form-check-input" value="sofa" type="radio" name="category" id="category_one">
+                        <input class="form-check-input" value="sofa" type="radio" name="category" id="category_one" <?php if(isset($category)){echo 'checked';}?>>
                         <label class="form-check-label" for="flexRadioDefault1">
                           Sofa
                         </label>
                       </div>
 
                       <div class="form-check">
-                        <input class="form-check-input" value="carpet" type="radio" name="category" id="category_one">
+                        <input class="form-check-input" value="carpet" type="radio" name="category" id="category_one" <?php if(isset($category) && $category=='carpet'){echo 'checked';}?>>
                         <label class="form-check-label" for="flexRadioDefault1">
                           Carpet
                         </label>
                       </div>
 
                       <div class="form-check">
-                        <input class="form-check-input" value="table" type="radio" name="category" id="category_one">
+                        <input class="form-check-input" value="table" type="radio" name="category" id="category_one" <?php if(isset($category) && $category=='table'){echo 'checked';}?>>
                         <label class="form-check-label" for="flexRadioDefault1">
                           Table
                         </label>
                       </div>
 
                       <div class="form-check">
-                        <input class="form-check-input" value="chair" type="radio" name="category" id="category_one">
+                        <input class="form-check-input" value="chair" type="radio" name="category" id="category_one" <?php if(isset($category) && $category=='chair'){echo 'checked';}?>>
                         <label class="form-check-label" for="flexRadioDefault1">
                           Chair
                         </label>
                       </div>
 
                       <div class="form-check">
-                        <input class="form-check-input" value="lamp" type="radio" name="category" id="category_one">
+                        <input class="form-check-input" value="lamp" type="radio" name="category" id="category_one" <?php if(isset($category) && $category=='lamp'){echo 'checked';}?>>
                         <label class="form-check-label" for="flexRadioDefault1">
                           Lamp
                         </label>
                       </div>
 
                       <div class="form-check">
-                        <input class="form-check-input" value="wall" type="radio" name="category" id="category_one">
+                        <input class="form-check-input" value="wall" type="radio" name="category" id="category_one" <?php if(isset($category) && $category=='wall'){echo 'checked';}?>>
                         <label class="form-check-label" for="flexRadioDefault1">
                           Wall
                         </label>
@@ -177,7 +177,7 @@ if(isset($_POST['search'])){
                 <div class="row mx-auto container mt-5">
                   <div class="col-lg-12 col-md-12 col-sm-12">
                     <p>Price</p>
-                    <input type="range" class="form-range w-50" min="1" max="100000" name="price" value="100" id="customRange2">
+                    <input type="range" class="form-range w-50" min="1" max="100000" name="price" value="<?php if(isset($price)){echo $price;}else{echo "100";}?>" id="customRange2">
                     <div class="w-50">
                       <span style="float:left;">1</span>
                       <span style="float:right;">50000</span>
