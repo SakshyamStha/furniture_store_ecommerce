@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2024 at 04:05 PM
+-- Generation Time: Jun 11, 2024 at 08:30 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -48,7 +48,10 @@ INSERT INTO `orders` (`order_id`, `order_cost`, `order_status`, `user_id`, `user
 (3, '9999.99', 'Not Paid', 1, 2147483647, 'ma', 'fen', '2024-06-08 13:27:54'),
 (4, '9999.99', 'Not Paid', 1, 2147483647, 'ma', 'fen', '2024-06-09 09:59:33'),
 (5, '9999.99', 'Not Paid', 1, 2147483647, 'ma', 'fen', '2024-06-09 10:14:31'),
-(6, '9999.99', 'Not Paid', 1, 2147483647, 'ma', 'fen', '2024-06-10 07:06:59');
+(6, '9999.99', 'Not Paid', 1, 2147483647, 'ma', 'fen', '2024-06-10 07:06:59'),
+(7, '20000.00', 'Not Paid', 2, 2147483647, 'ktm', 'pokhara', '2024-06-10 19:13:51'),
+(8, '5000.00', 'Not Paid', 2, 2147483647, 'ktm', 'pokhara', '2024-06-10 19:21:38'),
+(9, '5000.00', 'Not Paid', 1, 0, 'ma', 'fen', '2024-06-11 07:24:24');
 
 -- --------------------------------------------------------
 
@@ -80,7 +83,10 @@ INSERT INTO `order_items` (`item_id`, `order_id`, `product_id`, `product_name`, 
 (5, 5, '3', 'sofa1', 'sofa1.jpg', '3500.00', 1, 1, '2024-06-09 10:14:31'),
 (6, 5, '6', 'lamp1', 'lamp1.jpg', '7500.00', 2, 1, '2024-06-09 10:14:31'),
 (7, 6, '3', 'sofa1', 'sofa1.jpg', '3500.00', 1, 1, '2024-06-10 07:06:59'),
-(8, 6, '6', 'lamp1', 'lamp1.jpg', '7500.00', 5, 1, '2024-06-10 07:06:59');
+(8, 6, '6', 'lamp1', 'lamp1.jpg', '7500.00', 5, 1, '2024-06-10 07:06:59'),
+(9, 7, '5', 'sofa1', 'sofa1.jpg', '10000.00', 2, 2, '2024-06-10 19:13:51'),
+(10, 8, '7', 'carpet1', 'carpet1.jpg', '5000.00', 1, 2, '2024-06-10 19:21:38'),
+(11, 9, '7', 'carpet1', 'carpet1.jpg', '5000.00', 1, 1, '2024-06-11 07:24:24');
 
 -- --------------------------------------------------------
 
@@ -130,7 +136,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_name`, `user_email`, `user_password`) VALUES
-(1, 'ram', 'ram@gmail.com', '25f9e794323b453885f5181f1b624d0b');
+(1, 'ram', 'ram@gmail.com', '25f9e794323b453885f5181f1b624d0b'),
+(2, 'shambhu lal shrestha', 'shambhushrestha628@gmail.com', '25f9e794323b453885f5181f1b624d0b');
 
 --
 -- Indexes for dumped tables
@@ -169,13 +176,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -187,7 +194,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
