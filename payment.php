@@ -27,23 +27,26 @@ include('layouts/header.php');
         </div>
 
         <div class="mx-auto container text-center">
+
+        <?php if(isset($_SESSION['total']) && $_SESSION['total'] !=0) { ?>
+          <p>Total payment: Rs.<?php echo $_SESSION['total']; ?></p>
+          <input type="submit" class="btn btn-primary" value="Pay Now">
+          
+
+        <?php }else if(isset($_POST['order_status']) && $_POST['order_status'] == "Not Paid"){ ?>
+                    <p>Total Payment : Rs.<?php echo $_POST['order_total_price']; ?></p>
+                    <input type="submit" class="btn btn-primary" value="Pay Now">
+        
+        <?php } else{      ?>      
+                  <p>You dont have any order for payment</p>
+          
+
+        <?php } ?>
+
+
            
-            <p>Total payment: Rs.<?php if(isset($_SESSION['total'])) {echo $_SESSION['total'];} ?></p>
-            <?php if(isset($_SESSION['total']) && $_SESSION['total'] != 0 ){ ?>
-            <input type="submit" class="btn btn-primary" value="Pay Now">
-            <?php } else{ ?>
-
-              <p>You dont have any order for payment</p>
-
-              <?php } ?>
-
-              <p><?php if(isset($_POST['order_status'])) {echo $_POST['order_status']; }?></p>
-
-
-            <?php if(isset($_POST['order_status']) && $_POST['order_status'] =="Not Paid" ){ ?>
-            <input type="submit" class="btn btn-primaryw" value="Pay Now">
-            <?php }?>
-
+           
+            
 
         </div>
 
