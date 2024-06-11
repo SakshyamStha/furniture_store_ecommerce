@@ -603,8 +603,8 @@ th:last-child{
   .cart-quantity{
     background-color: #fb774b;
     color: white;
-    padding: 2px 5px;
+    padding: -2px ;
     border-radius: 50%;
-    margin: -2px;
+    margin: -3px;
     font-size: 1rem;
   }
