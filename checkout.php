@@ -2,13 +2,13 @@
 session_start();
 
 
-if(!empty($_SESSION['cart']) && isset($_POST['checkout'])){
+if(!empty($_SESSION['cart'])){
 
 
 
 }
 else{
-  header('location:index.php');
+  header('location:payment.php');
 }
 
 
@@ -35,6 +35,12 @@ include('layouts/header.php');
 
         <div class="mx-auto container">
             <form id="checkout-form" method="POST" action="server/place_order.php">
+              <p class="text-center" style="color:red;">
+                <?php if(isset($_GET['message'])){echo $_GET['message'];} ?>
+                <?php if(isset($_GET['message'])){ ?>
+                  <a class="btn btn-primary" href="login.php">Login</a>
+                <?php } ?>
+              </p>
                 <div class="form-group checkout-small-element">
                     <label for="">Name</label>
                     <input type="text" class="form-control" id="checkout-name" name="name" placeholder="Username">
