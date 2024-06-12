@@ -56,7 +56,7 @@ include('layouts/header.php');
 
    
 
-      <section id="search" class="my-5 py-5 ms-2 ">
+      <section id="search" class="my-5 py-0 ms-2 ">
         <div class="container mt-5 py-2">
           <p>Search Products</p>
           <hr>
@@ -138,8 +138,8 @@ include('layouts/header.php');
 
 
       <!--shop-->
-      <section id="shop" class="my-5 py-5 row mx-auto">
-        <div class="container mt-5 py-5">
+      <section id="shop" class="my-5 py-0 row mx-auto">
+        <div class="container mt-5 py-0">
           <h3>Our Products</h3>
           
           <p>
