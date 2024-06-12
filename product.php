@@ -60,16 +60,14 @@ include('layouts/header.php');
                     <div class="small-img-col">
                         <img src="assets/imgs/<?php echo $row['product_image3']; ?>" width="100%" class="small-img" alt="">
                     </div>
-                    <div class="small-img-col">
-                        <img src="assets/imgs/<?php echo $row['product_image4']; ?>" width="100%" class="small-img" alt="">
-                    </div>
+                   
                 </div>
             </div>
 
             
 
             <div class="col-lg-6 col-md-12 col-sm-12">
-                <h6>Carpet</h6>
+                <h6><?php echo $row['product_category']; ?></h6>
                 <h3 class="py-4"><?php echo $row['product_name']; ?></h3>
                 <h2>Rs.<?php echo $row['product_price'];  ?></h2>
 
