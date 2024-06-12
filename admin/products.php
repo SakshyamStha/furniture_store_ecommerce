@@ -34,6 +34,13 @@ if(!isset($_SESSION['admin_logged_in'])){
             <h1>Dashboard</h1>
             <hr>
             <h2>Products</h2>
+            <?php if(isset($_GET['edit_success_message'])){?>
+                <p class="text-center" style="color:green;"><?php echo $_GET['edit_success_message']; ?></p>
+            <?php } ?>
+
+            <?php if(isset($_GET['edit_failure_message'])){?>
+                <p class="text-center" style="color:red;"><?php echo $_GET['edit_failure_message']; ?></p>
+            <?php } ?>
            <div class = "table-responsive">
                 <table class="table table-striped table-sm">
                     <thead>
