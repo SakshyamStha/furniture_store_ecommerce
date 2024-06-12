@@ -44,7 +44,7 @@ button{
     font-weight: 900;
     outline: none;
     border: none;
-    background-color: #1d1d1d;
+    background-color: #fb774b;
     color: aliceblue;
     padding: 14px 30px;
     text-transform: uppercase;
@@ -54,13 +54,13 @@ button{
 
 button:hover{
     color: rgb(207, 147, 35);
-    background-color: dimgrey;
+    background-color: #5c2207;
 }
 
 .navbar{
     font-size: 16px;
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
+    padding-top: 1rem !important;
+    
     top: 0;
     left: 0;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
@@ -124,7 +124,7 @@ button:hover{
 }
 
 #home span{
-    color:  #5c2207;
+    color:  #fb774b;
 }
 
 #home .container{
@@ -240,7 +240,7 @@ hr{
 }
 
 #banner{
-    background-image: url('../imgs/banner.webp');
+    background-image: url('../imgs/6.jpg');
     width: 100%;
     height: 60vh;
     background-size: cover;
@@ -267,7 +267,8 @@ hr{
 }
 
 footer{
-    background-color: #222222;
+    background-color: #702e0f;
+    height: 75vh;
 }
 
 footer h5{
@@ -284,7 +285,7 @@ footer li {
 
 footer li a{
     font-size: .8rem;
-    color: #999;
+    color: #d8d8d8;
     text-decoration: none;
 }
 
