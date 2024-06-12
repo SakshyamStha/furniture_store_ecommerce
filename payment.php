@@ -54,7 +54,19 @@ include('layouts/header.php');
 
 
 
+<!-- <script src="https://www.paypal.com/sdk/js?client-id=..&currency=Rs."></script>
+<div id="paypal-button-container">
 
+</div>
+<script>
+  paypal.Buttons({
+    createOrder: function(data,actions){
+      return actions.order.create({
+        purchase_units
+      })
+    }
+  })
+</script> -->
 
    
 <?php

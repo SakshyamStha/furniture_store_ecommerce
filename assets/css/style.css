@@ -595,8 +595,16 @@ th:last-child{
 
  #search{
   
-    /* position: fixed;
-    left: 0;
-    top: -50px; */
+    width:20%;
+    
     float: left; 
   } 
+
+  .cart-quantity{
+    background-color: #fb774b;
+    color: white;
+    padding: -2px ;
+    border-radius: 50%;
+    margin: -3px;
+    font-size: 1rem;
+  }

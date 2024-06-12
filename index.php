@@ -20,7 +20,7 @@ include('layouts/header.php');
     </section>
     
       <!--Categories-->
-    <section id ="category" class="container">
+    <!-- <section id ="category" class="container">
         <div class="container text-center mt-5 py-5">
           <h3>Our Top Categories</h3>
           <hr>
@@ -45,7 +45,7 @@ include('layouts/header.php');
     
           </div>
 
-    </section>
+    </section> -->
 <br>
 
       <section id="new" class="w-100">
