@@ -31,12 +31,6 @@ if(isset($_GET['product_id'])){
    }else{
     header('location: products.php?edit_failure_message = Error occured, try again');
    }
-   
-
-    header('location:products.php');
-
-
-
 
 
 }else{
