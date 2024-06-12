@@ -5,5 +5,5 @@
     
     <li><a href="account.php">Account</a></li>
     <li><a href="add_products.php">Add New Product</a></li>
-    <li><a href="#">Help</a></li>
+    <li><a href="help.php">Help</a></li>
 </ul>
