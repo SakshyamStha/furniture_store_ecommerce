@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2024 at 05:29 AM
+-- Generation Time: Jun 12, 2024 at 06:19 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -20,6 +20,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `ecom`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admins`
+--
+
+CREATE TABLE `admins` (
+  `admin_id` int(11) NOT NULL,
+  `admin_name` varchar(150) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `admin_email` varchar(150) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `admin_password` varchar(150) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`admin_id`, `admin_name`, `admin_email`, `admin_password`) VALUES
+(1, 'admin', 'admin@email.com', '21232f297a57a5a743894a0e4a801fc3');
 
 -- --------------------------------------------------------
 
@@ -54,7 +74,8 @@ INSERT INTO `orders` (`order_id`, `order_cost`, `order_status`, `user_id`, `user
 (9, 5000.00, 'Not Paid', 1, 0, 'ma', 'fen', '2024-06-11 07:24:24'),
 (10, 2000.00, 'Not Paid', 3, 2147483647, 'dwd', 'Kathmandu', '2024-06-12 03:48:16'),
 (11, 2000.00, 'Not Paid', 3, 0, '', '', '2024-06-12 04:31:55'),
-(12, 10000.00, 'Not Paid', 3, 2147483647, 'dwd', 'Kathmandu', '2024-06-12 04:39:09');
+(12, 10000.00, 'Not Paid', 3, 2147483647, 'dwd', 'Kathmandu', '2024-06-12 04:39:09'),
+(13, 24000.00, 'Not Paid', 3, 2147483647, 'dwd', 'Kathmandu', '2024-06-12 14:43:49');
 
 -- --------------------------------------------------------
 
@@ -92,7 +113,8 @@ INSERT INTO `order_items` (`item_id`, `order_id`, `product_id`, `product_name`, 
 (11, 9, '7', 'carpet1', 'carpet1.jpg', 5000.00, 1, 1, '2024-06-11 07:24:24'),
 (12, 10, '4', 'chair1', 'chair1.jpg', 2000.00, 1, 3, '2024-06-12 03:48:16'),
 (13, 11, '4', 'chair1', 'chair1.jpg', 2000.00, 1, 3, '2024-06-12 04:31:55'),
-(14, 12, '5', 'Pumpkin Shaped Couch', 'sofa2.jpg', 10000.00, 1, 3, '2024-06-12 04:39:09');
+(14, 12, '5', 'Pumpkin Shaped Couch', 'sofa2.jpg', 10000.00, 1, 3, '2024-06-12 04:39:09'),
+(15, 13, '1', 'Lounge Chair with Ottoman', 'ochair2.jpg', 8000.00, 3, 3, '2024-06-12 14:43:49');
 
 -- --------------------------------------------------------
 
@@ -155,6 +177,12 @@ INSERT INTO `users` (`user_id`, `user_name`, `user_email`, `user_password`) VALU
 --
 
 --
+-- Indexes for table `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`admin_id`);
+
+--
 -- Indexes for table `orders`
 --
 ALTER TABLE `orders`
@@ -184,16 +212,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `products`
