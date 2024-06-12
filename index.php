@@ -31,34 +31,34 @@ include('layouts/header.php');
         <div class="container" style="display: flex; justify-content: space-between; width: 100%; flex-wrap: nowrap;">
         <div class="photo" style="flex: 1; margin: 10px; text-align: center;">
             <img src="assets/imgs/lamp1.jpg" alt="Photo 1" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-            <button style="padding: 10px 20px; font-size: 16px; color: #fff; background-color: #fb774b; border: none; transition: background-color 0.3s ease; margin-top: 10px;">Lighting</button>
+            <button onclick="openshop()"; style="padding: 10px 20px; font-size: 16px; color: #fff; background-color: #fb774b; border: none; transition: background-color 0.3s ease; margin-top: 10px;">Lighting</button>
         </div>
         <div class="photo" style="flex: 1; margin: 10px; text-align: center;">
             <img src="assets/imgs/chair1.jpg" alt="Photo 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-            <button style="padding: 10px 20px; font-size: 16px; color: #fff; background-color: #fb774b; border: none;  cursor: pointer; transition: background-color 0.3s ease; margin-top: 10px;">Chair</button>
+            <button onclick="openshop()"; style="padding: 10px 20px; font-size: 16px; color: #fff; background-color: #fb774b; border: none;  cursor: pointer; transition: background-color 0.3s ease; margin-top: 10px;">Chair</button>
         </div>
         <div class="photo" style="flex: 1; margin: 10px; text-align: center;">
             <img src="assets/imgs/sofa1.jpg" alt="Photo 3" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-            <button style="padding: 10px 20px; font-size: 16px; color: #fff; background-color:#fb774b;  border: none;  cursor: pointer; transition: background-color 0.3s ease; margin-top: 10px;">Sofa</button>
+            <button onclick="openshop()"; style="padding: 10px 20px; font-size: 16px; color: #fff; background-color:#fb774b;  border: none;  cursor: pointer; transition: background-color 0.3s ease; margin-top: 10px;">Sofa</button>
         </div>
         <div class="photo" style="flex: 1; margin: 10px; text-align: center;">
             <img src="assets/imgs/carpet2.jpg" alt="Photo 4" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-            <button style="padding: 10px 20px; font-size: 16px; color: #fff; background-color: #fb774b; border: none; cursor: pointer; transition: background-color 0.3s ease; margin-top: 10px;">Carpets</button>
+            <button onclick="openshop()"; style="padding: 10px 20px; font-size: 16px; color: #fff; background-color: #fb774b; border: none; cursor: pointer; transition: background-color 0.3s ease; margin-top: 10px;">Carpets</button>
         </div>
     </div>
     </div>
         <div class="container" style="display: flex; justify-content: space-between; width: 80%; flex-wrap: nowrap;">
         <div class="photo" style="flex: 1; margin: 10px; text-align: center;">
             <img src="assets/imgs/table2.jpg" alt="Photo 1" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-            <button style="padding: 10px 20px; font-size: 16px; color: #fff; background-color: #fb774b; border: none; cursor: pointer; transition: background-color 0.3s ease; margin-top: 10px;">Table</button>
+            <button onclick="openshop()"; style="padding: 10px 20px; font-size: 16px; color: #fff; background-color: #fb774b; border: none; cursor: pointer; transition: background-color 0.3s ease; margin-top: 10px;">Table</button>
         </div>
         <div class="photo" style="flex: 1; margin: 10px; text-align: center;">
             <img src="assets/imgs/wall1.jpg" alt="Photo 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-            <button style="padding: 10px 20px; font-size: 16px; color: #fff; background-color: #fb774b; border: none; cursor: pointer; transition: background-color 0.3s ease; margin-top: 10px;">Wall Decor</button>
+            <button onclick="openshop()"; style="padding: 10px 20px; font-size: 16px; color: #fff; background-color: #fb774b; border: none; cursor: pointer; transition: background-color 0.3s ease; margin-top: 10px;">Wall Decor</button>
         </div>
         <div class="photo" style="flex: 1; margin: 10px; text-align: center;">
             <img src="assets/imgs/ass1.jpg" alt="Photo 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-            <button style="padding: 10px 20px; font-size: 16px; color: #fff; background-color: #fb774b; border: none;  cursor: pointer; transition: background-color 0.3s ease; margin-top: 10px;">Accessories</button>
+            <button onclick="openshop()"; style="padding: 10px 20px; font-size: 16px; color: #fff; background-color: #fb774b; border: none;  cursor: pointer; transition: background-color 0.3s ease; margin-top: 10px;">Accessories</button>
         </div>
 </div>
 
@@ -147,6 +147,14 @@ include('layouts/header.php');
         </div>
 
       </section>
+
+
+
+      <script>
+        function openshop(){
+          window.open('shop.php','_blank');
+        }
+      </script>
 
    
 

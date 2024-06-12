@@ -70,6 +70,7 @@ button:hover{
     padding: 0 20px;
     color: black;
     transition: 0.4 ease;
+    left: 20px;
 
 }
 
@@ -89,12 +90,13 @@ button:hover{
     font-weight: 500;
     cursor: pointer;
     margin-left: 5px;
+  
 }
 
 @media only screen and (max-width:900px){
 
     .nav-btns{
-        margin: 10px;
+        margin: 100px;
     }
 
     .nav-btns ul{

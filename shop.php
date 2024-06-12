@@ -97,14 +97,14 @@ include('layouts/header.php');
                       <div class="form-check">
                         <input class="form-check-input" value="lamp" type="radio" name="category" id="category_one" <?php if(isset($category) && $category=='lamp'){echo 'checked';}?>>
                         <label class="form-check-label" for="flexRadioDefault1">
-                          Lamp
+                          Lighting
                         </label>
                       </div>
 
                       <div class="form-check">
                         <input class="form-check-input" value="wall" type="radio" name="category" id="category_one" <?php if(isset($category) && $category=='wall'){echo 'checked';}?>>
                         <label class="form-check-label" for="flexRadioDefault1">
-                          Wall
+                          Wall Decor
                         </label>
                       </div>
 
@@ -155,7 +155,7 @@ include('layouts/header.php');
 
 
 
-          <div onclick="window.location.href='product.html'"; class="product text-center col-lg-3 col-md-4 col-sm-6">
+          <div class="product text-center col-lg-3 col-md-4 col-sm-6">
             <img class="img-fluid mb-3"  src="assets/imgs/<?php echo $row['product_image']; ?>" alt="Sofa">
             <div class="star">
               <i class="fa-solid fa-star"></i>
@@ -171,17 +171,7 @@ include('layouts/header.php');
 
             <?php } ?>
 
-          <nav aria-label="Page Navigation">
-            <ul class="pagination mt-5 ">
-                <li class="page-item"><a class="page-link" href="">Previous</a></li>
-                <li class="page-item"><a class="page-link" href="">1</a></li>
-                <li class="page-item"><a class="page-link" href="">2</a></li>
-                <li class="page-item"><a class="page-link" href="">3</a></li>
-                <li class="page-item"><a class="page-link" href="">Next</a></li>
-
-            </ul>
-          </nav>
-
+          
 
         </div>
       </section>  

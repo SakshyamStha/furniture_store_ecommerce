@@ -38,7 +38,7 @@ session_start();
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="index.php#Categories">Category</a>
+                <a class="nav-link" href="shop.php">Category</a>
               </li>
 
               <li class="nav-item">
@@ -54,7 +54,11 @@ session_start();
                     <?php } ?>
                   </i>
                 </a>
-                <a href="account.php"><i class="fa-solid fa-user"></i></a>
+               
+              </li>
+
+              <li class="nav-item">
+              <a href="account.php"><i class="fa-solid fa-user"></i></a>
               </li>
               
               
