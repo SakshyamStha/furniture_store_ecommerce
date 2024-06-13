@@ -43,6 +43,14 @@ if(!isset($_SESSION['admin_logged_in'])){
                 <p class="text-center" style="color:red;"><?php echo $_GET['order_failed']; ?></p>
             <?php } ?>
 
+            <?php if(isset($_GET['deleted_successfully'])){?>
+                <p class="text-center" style="color:green;"><?php echo $_GET['deleted_successfully']; ?></p>
+            <?php } ?>
+
+            <?php if(isset($_GET['deleted_failure'])){?>
+                <p class="text-center" style="color:red;"><?php echo $_GET['deleted_failure']; ?></p>
+            <?php } ?>
+
            <div class = "table-responsive">
                 <table class="table table-striped table-sm">
                     <thead>
@@ -67,7 +75,7 @@ if(!isset($_SESSION['admin_logged_in'])){
                                 <td><?php echo $order['user_phone'];  ?></td>
                                 <td><?php echo $order['user_address'];  ?></td>
                                 <td><a class="btn btn-primary" href="edit_order.php?order_id=<?php echo $order['order_id'];  ?>">Edit</a></td>
-                                <td><a class="btn btn-danger" href="">Delete</a></td>
+                                <td><a class="btn btn-danger" href="delete_order.php?order_id=<?php echo $order['order_id'];  ?>">Delete</a></td>
 
                             </tr>
 
