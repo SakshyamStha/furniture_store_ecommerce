@@ -58,7 +58,14 @@ session_start();
               </li>
 
               <li class="nav-item">
-              <a href="account.php"><i class="fa-solid fa-user"></i></a>
+              <a href="account.php">
+                <i class="fa-solid fa-user">
+                    <?php if(isset($_SESSION['logged_in'])) { ?>
+
+                      <span class= "account-name"><?php echo $_SESSION['user_name']; ?></span>
+                    <?php } ?>
+                </i>
+              </a>
               </li>
               
               
