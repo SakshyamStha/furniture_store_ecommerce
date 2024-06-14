@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 14, 2024 at 06:45 AM
+-- Generation Time: Jun 14, 2024 at 07:34 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -67,7 +67,9 @@ INSERT INTO `orders` (`order_id`, `order_cost`, `order_status`, `user_id`, `user
 (17, '2000.00', 'Not Paid', 4, 123, 'ma', 'fen', '2024-06-13 18:59:25'),
 (18, '2000.00', 'Not Paid', 4, 123, 'ma', 'fen', '2024-06-13 18:59:54'),
 (19, '2000.00', 'Not Paid', 4, 123, 'ma', 'fen', '2024-06-13 19:04:04'),
-(23, '7600.00', 'Not Paid', 4, 2147483647, 'ma', 'fen', '2024-06-14 00:00:00');
+(23, '7600.00', 'paid', 4, 2147483647, 'ma', 'fen', '2024-06-14 00:00:00'),
+(24, '17600.00', 'Not Paid', 4, 2147483647, 'ma', 'fen', '2024-06-14 00:00:00'),
+(25, '12200.00', 'paid', 5, 2147483647, 'ktm', 'samakhushi 26 dumba marga', '2024-06-14 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -118,7 +120,12 @@ INSERT INTO `order_items` (`item_id`, `order_id`, `product_id`, `product_name`, 
 (24, 21, '1', 'Lounge Chair with Ottoman', 'ochair2.jpg', '8000.00', 1, 4, '2024-06-13 00:00:00'),
 (25, 22, '8', 'Moon Lamp', 'moonlamp3.jpg', '5000.00', 1, 4, '2024-06-13 00:00:00'),
 (26, 23, '8', 'Moon Lamp', 'moonlamp3.jpg', '5000.00', 1, 4, '2024-06-14 00:00:00'),
-(27, 23, '10', 'Arch Mirror', 'mirror1.jpg', '2600.00', 1, 4, '2024-06-14 00:00:00');
+(27, 23, '10', 'Arch Mirror', 'mirror1.jpg', '2600.00', 1, 4, '2024-06-14 00:00:00'),
+(28, 24, '8', 'Moon Lamp', 'moonlamp3.jpg', '5000.00', 1, 4, '2024-06-14 00:00:00'),
+(29, 24, '10', 'Arch Mirror', 'mirror1.jpg', '2600.00', 1, 4, '2024-06-14 00:00:00'),
+(30, 24, '5', 'Pumpkin Shaped Couch', 'sofa2.jpg', '10000.00', 1, 4, '2024-06-14 00:00:00'),
+(31, 25, '9', 'Coffee Table', 'ctable2.jpg', '4200.00', 1, 5, '2024-06-14 00:00:00'),
+(32, 25, '1', 'Lounge Chair with Ottoman', 'ochair2.jpg', '8000.00', 1, 5, '2024-06-14 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -152,7 +159,8 @@ INSERT INTO `products` (`product_id`, `product_name`, `product_category`, `produ
 (7, 'Bohemian rug', 'Carpet', 'Transform your living space with the vibrant and eclectic charm of our Bohemian Rug. Perfect for adding a touch of free-spirited style and warmth, this rug is an ideal centerpiece for any room seeking a boho-chic flair.', 'bohorug1.jpg', 'bohorug2.jpg', 'bohorug3.jpg', '', '5000.00', 0, 'all'),
 (8, 'Moon Lamp', 'lamp', 'Experience the mesmerizing glow of our Moon Lamp. With realistic 3D-printed details, adjustable brightness, and rechargeable convenience, it adds a touch of celestial charm to any room, creating a serene ambiance.', 'moonlamp3.jpg', 'moonlamp1.jpg', 'moonlamp2.jpg', '', '5000.00', 0, 'all'),
 (9, 'Coffee Table', 'Table', 'Complete your living space with our stylish coffee table. Featuring a sleek design and durable materials, it offers both functionality and elegance. Perfect for displaying decor, holding drinks, and enhancing your room\'s ambiance.\r\n\r\n\r\n\r\n\r\n\r\n\r\n', 'ctable2.jpg', 'ctable3.jpg', 'ctable1.jpg', '', '4200.00', 0, 'brown'),
-(10, 'Arch Mirror', 'wall', 'Enhance your decor with our elegant Arch Mirror. Featuring a gracefully curved design and high-quality glass, it adds sophistication and light to any room, perfect for entryways, bedrooms, living rooms, or bathrooms.', 'mirror1.jpg', 'mirror3.jpg', 'mirror2.jpg', '', '2600.00', 0, 'golden');
+(10, 'Arch Mirror', 'wall', 'Enhance your decor with our elegant Arch Mirror. Featuring a gracefully curved design and high-quality glass, it adds sophistication and light to any room, perfect for entryways, bedrooms, living rooms, or bathrooms.', 'mirror1.jpg', 'mirror3.jpg', 'mirror2.jpg', '', '2600.00', 0, 'golden'),
+(11, 'Hanging Chair', 'chair', 'very comfortable chair where you can sit and swing away your tensions.', 'Hanging Chair1.jpeg', 'Hanging Chair2.jpeg', 'Hanging Chair3.jpeg', 'Hanging Chair4.jpeg', '7750.00', 0, 'golden');
 
 -- --------------------------------------------------------
 
@@ -175,7 +183,8 @@ INSERT INTO `users` (`user_id`, `user_name`, `user_email`, `user_password`) VALU
 (1, 'ram', 'ram@gmail.com', '25f9e794323b453885f5181f1b624d0b'),
 (2, 'shambhu lal shrestha', 'shambhushrestha628@gmail.com', '25f9e794323b453885f5181f1b624d0b'),
 (3, 'mihika', 'mihika.ranjit1@gmail.com', '25d55ad283aa400af464c76d713c07ad'),
-(4, 'zalwa', 'zalwa1@email.com', '25f9e794323b453885f5181f1b624d0b');
+(4, 'zalwa', 'zalwa1@email.com', '25f9e794323b453885f5181f1b624d0b'),
+(5, 'Saksham', 'sakshamstha123@gmail.com', '9a296184eb3f6798b505a243859edbd7');
 
 --
 -- Indexes for dumped tables
@@ -226,25 +235,25 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
