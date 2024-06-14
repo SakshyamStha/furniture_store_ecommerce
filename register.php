@@ -91,19 +91,19 @@ include('layouts/header.php');
               <p style = "color:red;"><?php if(isset($_GET['error'])){ echo $_GET['error'];} ?></p>
                 <div class="form-group">
                     <label for="">Name</label>
-                    <input type="text" class="form-control" id="register-name" name="name" placeholder="Username">
+                    <input type="text" class="form-control" id="register-name" name="name" placeholder="Username" required>
                 </div>
                 <div class="form-group">
                     <label for="">Email</label>
-                    <input type="text" class="form-control" id="register-email" name="email" placeholder="Email">
+                    <input type="text" class="form-control" id="register-email" name="email" placeholder="Email" required>
                 </div>
                 <div class="form-group">
                     <label for="">Password</label>
-                    <input type="password" class="form-control" id="register-password" name="password" placeholder="password">
+                    <input type="password" class="form-control" id="register-password" name="password" placeholder="password" required>
                 </div>
                 <div class="form-group">
                     <label for="">Re-Password</label>
-                    <input type="password" class="form-control" id="register-confirm-password" name="confirmPassword" placeholder="Confirm password">
+                    <input type="password" class="form-control" id="register-confirm-password" name="confirmPassword" placeholder="Confirm password" required>
                 </div>
 
                 <div class="form-group">

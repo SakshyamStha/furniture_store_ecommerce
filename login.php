@@ -77,11 +77,11 @@ include('layouts/header.php');
                 <p style="color:red" class="text-center"><?php if(isset($_GET['error'])){echo $_GET['error']; } ?></p>
                 <div class="form-group">
                     <label for="">Email</label>
-                    <input type="text" class="form-control" id="login-email" name="email" placeholder="Email">
+                    <input type="text" class="form-control" id="login-email" name="email" placeholder="Email" required>
                 </div>
                 <div class="form-group">
                     <label for="">Password</label>
-                    <input type="password" class="form-control" id="login-password" name="password" placeholder="password">
+                    <input type="password" class="form-control" id="login-password" name="password" placeholder="password" required>
                 </div>
                 <div class="form-group">
                    <input type="submit" class="btn" id="login-btn" name="login_btn" value="Login">
