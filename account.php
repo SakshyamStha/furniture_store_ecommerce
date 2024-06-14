@@ -105,11 +105,11 @@ include('layouts/header.php');
                     <hr class="mx-auto">
                     <div class="form-group">
                         <label for="">Password</label>
-                        <input type="password" class="form-control" id="account-password" name="password" placeholder="password"">
+                        <input type="password" class="form-control" id="account-password" name="password" placeholder="password" required>
                     </div>
                     <div class="form-group">
                         <label for="">Confirm Password</label>
-                        <input type="password" class="form-control" id="account-password-confirm" name="confirmPassword" placeholder="Re-password"">
+                        <input type="password" class="form-control" id="account-password-confirm" name="confirmPassword" placeholder="Re-password" required>
                     </div>
                     <div class="form-group">
                         <input type="submit" value="Change Password" name="change_password" class="btn" id="change-pass-btn">

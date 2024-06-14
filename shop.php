@@ -156,7 +156,7 @@ include('layouts/header.php');
 
 
           <div class="product text-center col-lg-3 col-md-4 col-sm-6">
-            <img class="img-fluid mb-3"  src="assets/imgs/<?php echo $row['product_image']; ?>" alt="Sofa">
+            <img class="img-fluid mb-3"  src="assets/imgs/<?php echo $row['product_image']; ?>">
             <div class="star">
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
