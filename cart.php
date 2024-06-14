@@ -116,8 +116,8 @@ function calculateTotalCart(){
 
       <!--Cart-->
       <section class="cart container my-5 py-5">
-        <div class="container mt-5">
-            <h2 class="font-weight-bolde">Your Cart</h2>
+        <div class="container mt-5 nt-5">
+            <h2 class="font-weight-bolde text-center">Your Cart</h2>
             <hr>
         </div>
 
