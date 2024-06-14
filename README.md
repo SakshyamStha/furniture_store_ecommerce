@@ -22,7 +22,7 @@ FOR USERS:
 
 <hr>
 FOR ADMINS : 
-----------------------------------------------------
+<hr>
 ADMIN EMAIL : admin@email.com
 ADMIN PASSWORD:  admin
 
