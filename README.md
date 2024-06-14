@@ -1,5 +1,6 @@
 THIS IS AN ECOMMERCE SITE THAT HAS IMPLEMENTED ESEWA AS A PAYMENT GATEWAY.
 <hr>
+<hr>
 FOR USERS:
 <hr>
 1. FIRST REGISTER<br>
@@ -21,9 +22,9 @@ FOR USERS:
 
 <hr>
 FOR ADMINS : 
-<hr>
-ADMIN EMAIL : admin@email.com<br>
-ADMIN PASSWORD:  admin<br>
+----------------------------------------------------
+ADMIN EMAIL : admin@email.com
+ADMIN PASSWORD:  admin
 
 the password is encrypted using md5 for security purposes.<br>
 
