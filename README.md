@@ -1,27 +1,28 @@
 THIS IS AN ECOMMERCE SITE THAT HAS IMPLEMENTED ESEWA AS A PAYMENT GATEWAY.
-
+<hr>
 FOR USERS:
------------------------------------------------
+-----------------------------------------------<hr>
 1. FIRST REGISTER
 2. THEN SHOP AND ADD TO CART
 3. THEN CHECKOUT
 4. THEN PLACE ORDER
 5. THEN CLICK ESEWA AS PAYMENT METHOD
 
-   NOTE:: YOU WILL BE REDIRECTED TO ESEWA TEST SERVER
-   THE CREDENTIALS ARE:
-   eSewa ID: 9806800001/2/3/4/5
-   Password: Nepal@123
-   MPIN: 1122
-   Merchant ID/Service Code: EPAYTEST
-   Token:123456
+   NOTE:: YOU WILL BE REDIRECTED TO ESEWA TEST SERVER.
+   <br>
+   THE CREDENTIALS ARE:<br>
+   eSewa ID: 9806800001/2/3/4/5<br>
+   Password: Nepal@123<br>
+   MPIN: 1122<br>
+   Merchant ID/Service Code: EPAYTEST<br>
+   Token:123456<br>
 
 6. COMPLETE THE PAYMENT PROCESS.
 
 
----------------------------------------------------
+---------------------------------------------------<hr>
 FOR ADMINS : 
-----------------------------------------------------
+----------------------------------------------------<hr>
 ADMIN EMAIL : admin@email.com
 ADMIN PASSWORD:  admin
 
