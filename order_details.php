@@ -1,4 +1,6 @@
 <?php
+include('layouts/header.php');
+
 include('server/connection.php');
 
 if (isset($_POST['order_details_btn']) && isset($_POST['order_id'])) {
@@ -26,7 +28,7 @@ function calculateTotalOrderPrice($order_details) {
     return $total;
 }
 
-include('layouts/header.php');
+
 ?>
 
 <!--Order details-->

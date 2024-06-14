@@ -597,7 +597,7 @@ th:last-child{
 
 
  #search{
-  
+    background-color: gray;
     width:20%;
     
     float: left; 

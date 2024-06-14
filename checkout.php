@@ -1,5 +1,5 @@
 <?php
-session_start();
+include('layouts/header.php');
 
 
 if(!empty($_SESSION['cart'])){
@@ -16,7 +16,7 @@ else{
 ?>
 <?php
 
-include('layouts/header.php');
+
 
 
 ?>

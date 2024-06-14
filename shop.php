@@ -58,7 +58,7 @@ include('layouts/header.php');
 
       <section id="search" class="my-5 py-0 ms-2 ">
         <div class="container mt-5 py-2">
-          <p>Search Products</p>
+          <p><b>Browse Products here:</b></p>
           <hr>
         </div>
 
