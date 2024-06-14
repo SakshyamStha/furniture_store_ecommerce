@@ -193,6 +193,7 @@ include('layouts/header.php');
 
             
         </div>
+        <a class="btn shop-buy-btn" href="shop.php">Continue Shopping</a>
 
 
       </section>
