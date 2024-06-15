@@ -44,7 +44,7 @@ button{
     font-weight: 900;
     outline: none;
     border: none;
-    background-color: #fb774b;
+    background-color: #2f1b12;
     color: aliceblue;
     padding: 14px 30px;
     text-transform: uppercase;
@@ -53,14 +53,14 @@ button{
 }
 
 button:hover{
-    color: rgb(207, 147, 35);
+    color: #97704f;
     background-color: #5c2207;
 }
 
 .navbar{
     font-size: 16px;
     padding-top: 1rem !important;
-    
+    background-color: #714423;
     top: 0;
     left: 0;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
@@ -126,7 +126,7 @@ button:hover{
 }
 
 #home span{
-    color:  #fb774b;
+    color:  #2f1b12;
 }
 
 #home .container{
@@ -203,7 +203,7 @@ button:hover{
 }
 
 .product .buy-btn{
-    background-color: #fb774b;
+    background-color: #97704f;
     transform: translateY(50px);
     opacity: 0;
     transition: 0,3s all;
@@ -212,7 +212,7 @@ button:hover{
 }
 
 .shop-buy-btn{
-    background-color: #fb774b;
+    background-color: #714423;
     
     opacity: 1;
     text-decoration: none;
@@ -228,7 +228,7 @@ hr{
     width: 5%;
     height: 3px !important;
     opacity: 1 !important;
-    background-color: #fb774b;
+    background-color: #2f1b12;
     margin: 0 auto;
 }
 
@@ -238,7 +238,7 @@ hr{
 
 .star i{
     font-size: .9rem;
-    color: goldenrod;
+    color: #deaf84;
 }
 
 #banner{
@@ -257,11 +257,11 @@ hr{
 }
 
 #banner h1{
-    color: coral;
+    color: #2f1b12;
 }
 
 #banner button{
-    background-color: orange;
+    background-color: #714423;
 }
 
 #banner button:hover{
@@ -269,12 +269,12 @@ hr{
 }
 
 footer{
-    background-color: #702e0f;
+    background-color: #714423;
     height: 75vh;
 }
 
 footer h5{
-    color: #d8d8d8;
+    color: #deaf84;
     font-weight: 700;
     font-size: 1.2rem;
 
@@ -287,7 +287,7 @@ footer li {
 
 footer li a{
     font-size: .8rem;
-    color: #d8d8d8;
+    color: #deaf84;
     text-decoration: none;
 }
 
@@ -310,7 +310,7 @@ footer .copyright a{
 
 footer .copyright a:hover{
     color: white;
-    background-color: #fb774b;
+    background-color: #714423;
 }
 footer .footer-two a{
     color: black;
@@ -327,7 +327,7 @@ footer .footer-two a{
 
 footer .footer-two a:hover{
     color: white;
-    background-color: #fb774b;
+    background-color: #2f1b12;
 }
 
 footer p{
@@ -356,7 +356,7 @@ footer p{
 }
 
 .single-product .buy-btn{
-    background-color: #fb774b;
+    background-color: #714423;
     opacity: 1;
     transition: .4s all;
 }
@@ -381,7 +381,7 @@ footer p{
     text-align: left;
     padding: 5px 10px;
     color: white;
-    background-color: #fb774b;
+    background-color: #714423;
 }
 
 .cart td{
@@ -401,12 +401,12 @@ footer p{
 }
 
 .cart td a{
-    color: #fb774b;
+    color: #714423;
     
 }
 
 .cart .remove-btn{
-    color: #fb774b;
+    color: #714423;
     text-decoration: none;
     font-size: 15px;
     background-color: white;
@@ -415,7 +415,7 @@ footer p{
 }
 
 .cart .edit-btn{
-    color: #fb774b;
+    color: #714423;
     text-decoration: none;
     font-size: 15px;
     background-color: white;
@@ -435,7 +435,7 @@ footer p{
 .cart-total table{
     width: 100%;
     max-width: 500px;
-    border-top: 3px solid #fb774b;
+    border-top: 3px solid #714423;
 }
 
 td:last-child{
@@ -453,7 +453,7 @@ th:last-child{
 
 .checkout-btn{
    
-    background-color: #fb774b;
+    background-color: #714423;
     color: white;
 }
 
@@ -463,7 +463,7 @@ th:last-child{
     margin: 5px auto;
     text-align: center;
     padding: 20px;
-    border-top: 1px solid #fb774b;
+    border-top: 1px solid #714423;
 }
 
 #login-form input{
@@ -472,7 +472,7 @@ th:last-child{
 }
 
 #login-form #login-btn{
-    background-color: #fb774b;
+    background-color: #714423;
     color: whitesmoke;
 }
 
@@ -497,12 +497,12 @@ th:last-child{
 }
 
 #register-form #register-btn{
-    background-color: #fb774b;
+    background-color: #714423;
     color: whitesmoke;
 }
 
 #register-form #login-url{
-    color: coral;
+    color: #714423;
 }
 
 
@@ -521,12 +521,12 @@ th:last-child{
 
 #account-form #change-pass-btn{
     color: white;
-    background-color: #fb774b;
+    background-color: #714423;
 }
 
 .account-info #order-btn,#logout-btn{
     text-decoration: none;
-    color: coral;
+    color: #714423;
 }
 
 
@@ -547,7 +547,7 @@ th:last-child{
    
     padding: 5px 10px;
     color: whitesmoke;
-    background-color: #fb774b;
+    background-color: #714423;
     text-align: center;
 }
 
@@ -564,7 +564,7 @@ th:last-child{
 
 .orders .order-details-btn{
     color: white;
-    background-color: #fb774b;
+    background-color: #714423;
 }
 
 
@@ -591,20 +591,20 @@ th:last-child{
 
 #checkout-form #checkout-btn{
     color: white;
-    background-color: coral;
+    background-color:#97704f;
 }
 
 
 
  #search{
-    background-color: coral;
+    background-color: #97704f;
     width:20%;
     
     float: left; 
   } 
 
   .cart-quantity{
-    background-color: #fb774b;
+    background-color: #714423;
     color: white;
     padding: 2px ;
     border-radius: 50%;
