@@ -2,9 +2,9 @@
 <footer class="mt-5 py-5">
         <div class="row container mx-auto pt-5">
           <div class="footer-one col-lg-3 col-md-6 col-sm-12">
-            <img src="assets/imgs/logo3.jpg" height="60px" width="100px" alt="">
+            <img src="assets/imgs/logo4.jpg" height="50px" width="115px" alt="">
             <p class="pt-3">
-              We provide the best products for affordable prices
+            Discover top-quality products at unbeatable prices!
             </p>
           </div>
 
@@ -14,11 +14,11 @@
            </h5>
            <ul class="text-uppercase">
               <li><a href="">Sofa</a></li>
-              <li><a href="">Table</a></li>
               <li><a href="">Carpet</a></li>
-              <li><a href="">Wall</a></li>
-              <li><a href="">Lamp</a></li>
+              <li><a href="">Table</a></li>
               <li><a href="">Chair</a></li>
+              <li><a href="">Lighting</a></li>
+              <li><a href="">Wall Decor</a></li>
            </ul>
           </div>
 
@@ -43,8 +43,8 @@
           <div class="footer-two col-lg-3 col-md-6 col-sm-12">
             <div class="row container mx-auto">
               <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-              <a href="#"><i class="fab fa-facebook"></i></a><br>
-              <a href="#"><i class="fab fa-instagram"></i></a><br>
+              <a href="#"><i class="fab fa-facebook"></i></a><br><br>
+              <a href="#"><i class="fab fa-instagram"></i></a><br><br>
               <a href="#"><i class="fab fa-twitter"></i></a><br>
               </div>
             </div>

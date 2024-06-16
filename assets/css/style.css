@@ -17,23 +17,28 @@ body{
 h1{
     font-size: 2.5rem;
     font-weight: 700;
+    color:#714423;
 }
 
 h2{
     font-size: 1.8rem;
     font-weight: 600;
+    color:#714423;
 }
 h3{
     font-size: 1.5rem;
     font-weight: 800;
+    color:#714423;
 }
 h4{
     font-size: 1.2rem;
     font-weight: 600;
+    color:#714423;
 }
 h5{
     font-size: 1rem;
     font-weight: 400;
+    color:#714423;
 }
 h6{
     color: #d8d8d8;
@@ -126,7 +131,7 @@ button:hover{
 }
 
 #home span{
-    color:  #2f1b12;
+    color:  white;
 }
 
 #home .container{
@@ -203,7 +208,7 @@ button:hover{
 }
 
 .product .buy-btn{
-    background-color: #97704f;
+    background-color: #714423;
     transform: translateY(50px);
     opacity: 0;
     transition: 0,3s all;
@@ -238,7 +243,7 @@ hr{
 
 .star i{
     font-size: .9rem;
-    color: #deaf84;
+    color: #714423;
 }
 
 #banner{
@@ -287,7 +292,7 @@ footer li {
 
 footer li a{
     font-size: .8rem;
-    color: #deaf84;
+    color: white;
     text-decoration: none;
 }
 
@@ -597,7 +602,7 @@ th:last-child{
 
 
  #search{
-    background-color: #97704f;
+    background-color: #714423;
     width:20%;
     
     float: left; 
@@ -614,7 +619,7 @@ th:last-child{
 
   .account-name{
     /* background-color: #f27d08; */
-    color: black;
+    color: #714423;
     padding: 2px ;
     border-radius: 80%;
     margin: -3px;

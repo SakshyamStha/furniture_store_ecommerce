@@ -11,8 +11,8 @@ include('layouts/header.php');
     <section id="home">
         <div class="container">
           <br>
-            <h5>HALO HOME DECOR</h5>
-            <h1><span>Transform Your Home</span> Reflect Your Style</h1>
+            <h5 style="color: #2f1b12">HALO HOME DECOR</h5>
+            <h1 style="color: #2f1b12"><span>Transform Your Home</span> Reflect Your Style</h1>
             <p>Best prices<br>this season.</p>
             <button>Shop Now</button>
         </div>
@@ -22,7 +22,7 @@ include('layouts/header.php');
       <!--Categories-->
     <section id ="category" class="container">
         <div class="container text-center mt-5 py-5">
-          <h3 style="font-size: 35px; color: #714423;">Our Top Categories</h3>
+          <h3 style="font-size: 35px; color: #2f1b12">Our Top Categories</h3>
           <hr><br>
           <p>
             Here you can check out our top categories
@@ -98,7 +98,7 @@ include('layouts/header.php');
       <!--Features-->
       <section id="featured" class="my-1 pt-1">
         <div class="container text-center mt-5 py-5">
-          <h3 style="font-size: 35px; color:  #714423;">Our Featured Products</h3>
+          <h3 style="font-size: 35px; color: #2f1b12">Our Featured Products</h3>
           <hr>
           <p>
             Here you can check out our featured products
@@ -142,7 +142,7 @@ include('layouts/header.php');
       <section id="banner" class="my-5 py-5">
         <div class="container">
           <h4>SALE</h4>
-          <h1>UP to 30% OFF</h1>
+          <h1>Budget-Friendly Deals!</h1>
           <button class="text-uppercase">Shop Now</button>
         </div>
 
