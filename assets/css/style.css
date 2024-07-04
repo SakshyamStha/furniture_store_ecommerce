@@ -625,3 +625,7 @@ th:last-child{
     margin: -3px;
     font-size: 0.6rem;
   }
+
+  .contact{
+    background-color: aqua;
+  }

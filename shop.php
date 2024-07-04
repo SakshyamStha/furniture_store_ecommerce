@@ -127,7 +127,7 @@ include('layouts/header.php');
                 </div>
 
                 <div class="form-group my-3 mx-3">
-                  <input type="submit" name="search" value="Search" class="btn btn-primary" id="">
+                  <input type="submit" name="search" value="Search" class="btn btn-light" id="">
                 </div>
               </form>
 

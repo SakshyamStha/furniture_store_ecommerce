@@ -14,7 +14,7 @@ include('layouts/header.php');
             <h5 style="color: #2f1b12">HALO HOME DECOR</h5>
             <h1 style="color: #2f1b12"><span>Transform Your Home</span> Reflect Your Style</h1>
             <p>Best prices<br>this season.</p>
-            <button>Shop Now</button>
+            <button onclick=openshop()>Shop Now</button>
         </div>
 
     </section>
@@ -81,7 +81,7 @@ include('layouts/header.php');
             <img class="img-fluid" src="assets/imgs/2.jpg" alt="">
             <div class="details">
               <h2>Elevate Your Space with Exceptional Quality</h2>
-              <button class="text-uppercase">Shop Now</button>
+              <button class="text-uppercase" onclick="openshop()">Shop Now</button>
             </div>
           </div>
 
@@ -143,7 +143,7 @@ include('layouts/header.php');
         <div class="container">
           <h4>SALE</h4>
           <h1>Budget-Friendly Deals!</h1>
-          <button class="text-uppercase">Shop Now</button>
+          <button class="text-uppercase" onclick="openshop()">Shop Now</button>
         </div>
 
       </section>
