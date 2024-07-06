@@ -55,7 +55,7 @@
         <div class="copyright mt-5">
           <div class="row container mx-auto">
             <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-              <img src="assets/imgs/payment.png" height="77%" width="88%"  alt="">
+              <img src="assets/imgs/esewaa.jpg" height="60%" width="65%"  alt="">
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12 mb-4 text-nowrap mb-2">
               <p>Halo @ 2024 All Rights Reserved</p>
