@@ -1,5 +1,5 @@
 <?php
-session_start();
+include('layouts/header.php');
 
 if (isset($_POST['order_pay_btn'])) {
     $order_status = $_POST['order_status'];
@@ -21,7 +21,7 @@ $secret_key = '8gBm/:&EnhH.1/q';
 $hash = hash_hmac('sha256', $message, $secret_key, true);
 $signature = base64_encode($hash);
 
-include('layouts/header.php');
+
 ?>
 
 <!--Payment-->
