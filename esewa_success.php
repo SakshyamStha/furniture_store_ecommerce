@@ -1,8 +1,8 @@
 <?php
-session_start();
+include('layouts/header.php');
 
 include('server/connection.php');
-include('layouts/header.php');
+
 
 if (isset($_GET['data'])) {
     // Decode the URL-encoded data parameter
