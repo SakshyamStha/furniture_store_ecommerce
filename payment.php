@@ -13,7 +13,7 @@ $order_id = $_SESSION['order_id'] ?? '';
 
 // Prepare the message according to the specified order of signed field names
 $message = "total_amount={$order_total_price},transaction_uuid={$order_id},product_code=EPAYTEST";
-
+echo $message;
 // Secret key for HMAC-SHA256
 $secret_key = '8gBm/:&EnhH.1/q';
 
