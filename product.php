@@ -1,5 +1,5 @@
 <?php
-
+include('layouts/header.php');
 include('server/connection.php');
 
 if(isset($_GET['product_id'])){
@@ -34,7 +34,7 @@ if(isset($_GET['product_id'])){
 
 <?php
 
-include('layouts/header.php');
+
 
 
 ?>

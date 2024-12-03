@@ -1,6 +1,6 @@
 <?php
 
-    session_start();
+include('layouts/header.php');
 
     include('server/connection.php');
 
@@ -69,7 +69,7 @@
 ?>
 <?php
 
-include('layouts/header.php');
+
 
 
 ?>

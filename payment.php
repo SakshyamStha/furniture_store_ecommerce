@@ -1,5 +1,5 @@
 <?php
-session_start();
+include('layouts/header.php');
 
 if (isset($_POST['order_pay_btn'])) {
     $order_status = $_POST['order_status'];
@@ -13,7 +13,7 @@ $order_id = $_SESSION['order_id'] ?? '';
 
 // Prepare the message according to the specified order of signed field names
 $message = "total_amount={$order_total_price},transaction_uuid={$order_id},product_code=EPAYTEST";
-
+echo $message;
 // Secret key for HMAC-SHA256
 $secret_key = '8gBm/:&EnhH.1/q';
 
@@ -21,7 +21,7 @@ $secret_key = '8gBm/:&EnhH.1/q';
 $hash = hash_hmac('sha256', $message, $secret_key, true);
 $signature = base64_encode($hash);
 
-include('layouts/header.php');
+
 ?>
 
 <!--Payment-->

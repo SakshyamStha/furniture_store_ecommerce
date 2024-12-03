@@ -43,8 +43,8 @@
           <div class="footer-two col-lg-3 col-md-6 col-sm-12">
             <div class="row container mx-auto">
               <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-              <a href="#"><i class="fab fa-facebook"></i></a><br><br>
-              <a href="#"><i class="fab fa-instagram"></i></a><br><br>
+              <a href="https://www.facebook.com/mihika.ranjit.3"><i class="fab fa-facebook"></i></a><br><br>
+              <a href="https://www.instagram.com/_saksham_stha_59/"><i class="fab fa-instagram"></i></a><br><br>
               <a href="#"><i class="fab fa-twitter"></i></a><br>
               </div>
             </div>
